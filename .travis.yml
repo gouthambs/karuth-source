@@ -14,7 +14,7 @@ notifications:
     on_failure: always
 env:
   global:
-  - secure:
+    secure: MVPPwbr1huDw6pQ/MoXZlieQul6DfF5zOhI+i/HmeUbRSigibHRRNvLkBr3Pejc2FOwDUe9RDlqfRxoWYUsp1dTzxqZwHdf6TrVnEJ6R4GqwCbAEG+CzV8AnYI2qiRJVxvW1JrzmvPJPENQzzvXjlZDOVguHTebgAv1kHdvYDgo=
 before_install:
-  - git submodule update --init --recursive
+- git submodule update --init --recursive
 after_success: ./deploy.sh
