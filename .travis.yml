@@ -10,7 +10,6 @@ script:
 - make html
 notifications:
   email:
-    on_success: always
     on_failure: always
 env:
   global:
