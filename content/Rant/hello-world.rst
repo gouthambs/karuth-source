@@ -2,6 +2,7 @@ Hello World!
 ############
 
 :date: 2013-12-24 11:03
+:category : Rant
 :tags: general
 :slug: hello-world
 :author: Gouthaman Balaraman
