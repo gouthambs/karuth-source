@@ -20,33 +20,32 @@
 </head>
 
 <body>
-<div id="wrap">
-	<header class="blog-header">
-	  <div class="container">
-		<div class="row-fluid">
-		  <div class="span9">
-		<a href="{{ SITEURL }}" class="brand">{{SITENAME}}</a>
-		  </div>
+<header class="blog-header">
+  <div class="container">
+	<div class="row-fluid">
+	  <div class="span9">
+	<a href="{{ SITEURL }}" class="brand">{{SITENAME}}</a>
+	  </div>
 
-		  <div class="span3" id="blog-nav">
-		<ul class="nav nav-pills pull-right">
-		  {% if DISPLAY_PAGES_ON_MENU %}
-			  {% for page in PAGES %}
-				<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-				{% endfor %}
-				{% endif %}
-		   {% for cat, null in categories %}
-			<li {% if cat == category %} class="active" {% endif %}>
-			  <a href="{{ SITEURL }}/{{ cat.url }} ">{{ cat }}</a>
-		   {% endfor %}
-		</ul>
-		  </div>
-		</div> <!-- End of fluid row-->
-	  </div>   <!-- End of Container-->
-	</header>
-		
-	<div class="container">
-		<div class="content">
+	  <div class="span3" id="blog-nav">
+	<ul class="nav nav-pills pull-right">
+	  {% if DISPLAY_PAGES_ON_MENU %}
+		  {% for page in PAGES %}
+			<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+			{% endfor %}
+			{% endif %}
+	   {% for cat, null in categories %}
+		<li {% if cat == category %} class="active" {% endif %}>
+		  <a href="{{ SITEURL }}/{{ cat.url }} ">{{ cat }}</a>
+	   {% endfor %}
+	</ul>
+	  </div>
+	</div> <!-- End of fluid row-->
+  </div>   <!-- End of Container-->
+</header>
+	
+<div class="container">
+	<div class="content">
 		<div class="row-fluid">
 
 			<div class="span10">
@@ -55,11 +54,9 @@
 			
 			
 		</div> {# End row #}
-		</div> {# End content #}
-	</div>
+	</div> {# End content #}
 </div>
 <!--footer-->
-<div id="footer">
 <div class="container">
   <div class="well" style="background-color: #E9EFF6">
     <div id="blog-footer">
@@ -136,6 +133,5 @@
 
 
 {% include "analytics.html" %}
-</div>
 </body>
 </html>

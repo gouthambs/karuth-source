@@ -89,6 +89,11 @@ h1,h2,h3,h4,h5,h6 { color: #000001; margin-bottom: 0px}
 #colophon { display: table-header-group;}
 #sitelinks { display: table-footer-group;}
 }
+
+.rsidebar{
+	background-color: #E9EFF6;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 

@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Karuth'
 SITESUBTITLE	= u"Truth in Numbers"
-SITEURL = '.'
+SITEURL = ''
 
 TIMEZONE = 'America/Los_Angeles'
 
@@ -38,7 +38,7 @@ DISQUS_SITENAME = "karuth"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
 THEME = "theme"
 COLOPHON = True
-COLOPHON_TITLE = 'About Me'
+COLOPHON_TITLE = 'About'
 COLOPHON_CONTENT = \
 'This is a blog about programming, finance, and numbers.'\
 ''
