@@ -4,11 +4,12 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Karuth'
-SITESUBTITLE	= u"Truth in Numbers"
-SITEURL = ''
+#SITESUBTITLE	= u"Truth in Numbers"
+SITEURL = 'www.karuth.com'
+
 
 TIMEZONE = 'America/Los_Angeles'
-
+DEFAULT_DATE_FORMAT ='%B %d, %Y'
 
 DEFAULT_LANG = u'en'
 
@@ -24,19 +25,21 @@ TRANSLATION_FEED_ATOM = None
 #          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('Twitter','#'),)
+#SOCIAL = (('Twitter','#'),)
             #(('You can add links in your config file', '#'),
           #('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 READERS = {'html': None}
 DISQUS_SITENAME = "karuth"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
-THEME = "theme"
+#THEME = "water-iris-theme"
+THEME = "svbhack-theme"
+DISPLAY_PAGES_ON_MENU =True
 COLOPHON = True
 COLOPHON_TITLE = 'About'
 COLOPHON_CONTENT = \
