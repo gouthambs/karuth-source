@@ -40,8 +40,4 @@ GOOGLE_ANALYTICS = 'UA-46714334-1'
 #THEME = "water-iris-theme"
 THEME = "svbhack-theme"
 DISPLAY_PAGES_ON_MENU =True
-COLOPHON = True
-COLOPHON_TITLE = 'About'
-COLOPHON_CONTENT = \
-'This is a blog about programming, finance, and numbers.'\
-''
+PATH = "content"
