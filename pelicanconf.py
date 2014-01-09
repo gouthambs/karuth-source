@@ -7,7 +7,6 @@ SITENAME = u'Karuth'
 #SITESUBTITLE	= u"Truth in Numbers"
 SITEURL = 'www.karuth.com'
 
-
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
 
