@@ -3,7 +3,8 @@ Python Multiprocessing as a Task Queue
 
 :date: 2014-01-07
 :tags: python, programming
-:summary: Here I discuss a very simple technique to use multiprocessing module as a task queue
+:description: Use multiprocessing module as a task queue, and over come GIL in python.
+
 
 When you have computationally intensive tasks in your website (or scripts),
 it is conventional to use a task queue such as Celery_. Using Celery requires
@@ -59,6 +60,7 @@ One can use the same idea for a website as shown below in the Flask app example:
 			app.run()
 		except KeyboardInterrupt:
 			_pool.close()
+			_pool.join()
 
 	
 

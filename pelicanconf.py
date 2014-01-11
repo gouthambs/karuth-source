@@ -24,19 +24,19 @@ TRANSLATION_FEED_ATOM = None
 #          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-#SOCIAL = (('Twitter','#'),)
+TWITTER_HANDLE = 'quantspeak'
+#SOCIAL = (('Twitter','https://twitter.com/'+TWITTER_HANDLE),)
             #(('You can add links in your config file', '#'),
           #('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+#RELATIVE_URLS = True
 
 READERS = {'html': None}
 DISQUS_SITENAME = "karuth"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
-#THEME = "water-iris-theme"
 THEME = "svbhack-theme"
-DISPLAY_PAGES_ON_MENU =True
+DISPLAY_PAGES_ON_MENU = True
 PATH = "content"

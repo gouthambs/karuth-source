@@ -1,6 +1,18 @@
 {% extends "base.html" %}
-{% block head %}
-<meta name="keywords" content="{{ article.tags|join(', ')  }}">
+
+{# Overwrite the meta description block #}
+{% block metadesc %}{{ article.description|e}}{% endblock %}
+{% block articlemeta %}
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ article.title|e }}" />
+  <meta property="og:description" content= "{{ article.description|e}}" />
+  <meta property="og:url" content= "{{ article.url }}" />
+{% if article.keywords %}
+  <meta name="keywords" content="{{ article.keywords  }}">
+{% else %}
+  <meta name="keywords" content="{{ article.tags|join(', ')  }}">
+{% endif %}
 {% endblock %}
 
 {% block title %}{{ article.title }}{% endblock %}
@@ -12,7 +24,7 @@
 {% block content %}
 <article>
   <div class="article_title">
-    <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+    <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
   </div>
   <div class="article_credits">
      Published {{ article.locale_date }} By {{article.author}}
@@ -42,12 +54,30 @@
 	<div style="clear: both;"></div>
 	</p>
 	<hr></hr>
-    {#{% if DISQUS_SITENAME %}
-    <p>Comments: <a href="#" onclick="javascript:toggleComments();return false;">toggle</a></p>
-    {% endif %}
-	#}
   <div>
-
+  {% if TWITTER_HANDLE %}
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="{{TWITTER_HANDLE}}">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(! d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  </script>
+  {%endif %}
+  <!-- Google plus share button -->
+  <!-- Place this tag where you want the share button to render. -->
+  <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+  <!-- Place this tag after the last share tag. -->
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+  </script>
+  <!-- end of google plus share-->
+  <!-- LinkedIn button -->
+  <script src="//platform.linkedin.com/in.js" type="text/javascript">
+    lang: en_US
+    </script>
+  <script type="IN/Share" data-counter="right"></script>
+  <!-- end of LinkedIn share -->
   {% if DISQUS_SITENAME %}
     <div id="article_comments" style="display:{%if COLLAPSE_COMMENTS %}none{% else %}block{% endif %}">
         <div id="disqus_thread"></div>

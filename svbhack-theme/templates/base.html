@@ -10,11 +10,21 @@
   <!--link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono"-->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
 
+  <!-- meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow" />
   <meta name="generator" content="{{SITEURL}}" />
   <meta name="author" content="{{ AUTHOR }}">
-  <meta name="description" content="Posts and writings by {{ AUTHOR }}">
+  <meta name="description" content="{% block metadesc %}Posts and writings by {{ AUTHOR }} {% endblock %}">
+  {% block articlemeta %}
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ SITENAME }}" />
+  <meta property="og:description" content= "Karuth - Truth in Numbers" />
+  <meta property="og:site_name" content=" {{ SITENAME }}" />
+  <meta property="og:url" content= "{{ SITEURL }}" />
+  {% endblock articlemeta %}
 
   {% if FEED_ALL_ATOM %}
   <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
@@ -22,7 +32,7 @@
   {% if FEED_ALL_RSS %}
   <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
   {% endif %}
-
+  <meta property="og:locale" content="en_US" />
   {% block head %}
   {% endblock %}
 
@@ -60,6 +70,10 @@
         {% for name, link in SOCIAL %}
         <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
         {% endfor %}
+        {% if TWITTER_HANDLE %}
+        <a href="https://twitter.com/{{ TWITTER_HANDLE}}" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @{{TWITTER_HANDLE}}</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        {% endif %}
       </ul>
 	  </center>
     </div>

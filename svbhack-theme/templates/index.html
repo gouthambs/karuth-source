@@ -5,9 +5,15 @@
   <div class="article_title">
     <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
   </div>
+  {% if article.description %}
+  <div class="article_text">
+    {{ article.description }}
+  </div>
+  {% else %}
   <div class="article_text">
     {{ article.summary }}
   </div>
+  {% endif %}
 </article>
 {% if not loop.last %}
 <hr />
