@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Karuth'
 #SITESUBTITLE	= u"Truth in Numbers"
-SITEURL = 'http://www.karuth.com'
+SITEURL = 'http://karuth.com'
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
@@ -32,11 +32,12 @@ TWITTER_HANDLE = 'quantspeak'
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+#RELATIVE_URLS = True
 
 READERS = {'html': None}
 DISQUS_SITENAME = "karuth"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
-THEME = "svbhack-theme"
+#THEME = "svbhack-theme"
+THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
 PATH = "content"

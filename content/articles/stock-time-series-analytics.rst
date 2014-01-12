@@ -109,7 +109,7 @@ One can use data from yahoo finance to calculate the stock beta as shown:
     r_squared       = covmat[0,1]/np.sqrt(covmat[1,1]*covmat[0,0])
 
     # 5- year volatiity and 1-year momentum
-    volatility      = np.std(covmat[0,0])
+    volatility      = np.sqrt(covmat[0,0])
     momentum        = np.prod(1+dfsm["s_returns"].tail(12).values) -1
 
     
