@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
     <head>
         {% block head %}
         <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+        <!-- All the meta tags -->
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        {% if USE_OPEN_GRAPH is not defined %}
+            {% set USE_OPEN_GRAPH = True %}
+        {% endif %}
+
+        {% if USE_OPEN_GRAPH %}
+            {% if OPEN_GRAPH_FB_APP_ID %}
+                <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+            {% endif %}
+            {% if article %}
+                <meta property="og:type" content="article"/>
+                <meta property="og:title" content="{{ article.title }}"/>
+                <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
+                <meta property="og:description" content="{{ article.description|striptags|e if article.description else article.summary|striptags|e   }}"/>
+            {% elif page %}
+                <meta property="og:type" content="article"/>
+                <meta property="og:title" content="{{ page.title }}"/>
+                <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
+            {% else %}
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content="{{ SITENAME }}"/>
+                <meta property="og:url" content="{{ SITEURL }}"/>
+                <meta property="og:description" content="{{ SITENAME }}"/>
+                {% if OPEN_GRAPH_IMAGE %}
+                <meta property="og:image"
+                      content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
+            {% endif %}
+            {% endif %}
+        {% endif %}
+        
+        
+        
         <!--link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'-->
         <link href="http://bootswatch.com/journal/bootstrap.min.css" rel="stylesheet"/>
         <link href="{{ SITEURL }}/theme/static/css/style.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
         {% endif %}
@@ -33,7 +68,7 @@
         <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
         {% endblock head %}
-        {% include "modules/analytics.html" %}
+        {% include "analytics.html" %}
     </head>
 
     <body id="index" class="archive">
