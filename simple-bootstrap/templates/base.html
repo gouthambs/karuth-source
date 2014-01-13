@@ -33,6 +33,7 @@
         <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
         {% endblock head %}
+        {% include "modules/analytics.html" %}
     </head>
 
     <body id="index" class="archive">
