@@ -105,11 +105,10 @@ One can use data from yahoo finance to calculate the stock beta as shown:
 
     # calculate measures now
     beta            = covmat[0,1]/covmat[1,1]
-    alpha           = np.mean(dfsm["s_returns"])-beta*np.mean(dfsm["b_returns"])
-    r_squared       = covmat[0,1]/np.sqrt(covmat[1,1]*covmat[0,0])
+    alpha           = 12*np.mean(dfsm["s_returns"])-beta*np.mean(dfsm["b_returns"])
 
     # 5- year volatiity and 1-year momentum
-    volatility      = np.sqrt(covmat[0,0])
+    volatility      = np.sqrt(12*covmat[0,0]) # annualize with the factor sqrt(12) 
     momentum        = np.prod(1+dfsm["s_returns"].tail(12).values) -1
 
     
@@ -121,6 +120,10 @@ but not always accurate. The volatility is calculated here as a simple
 standard deviation of the returns. From an option-pricing
 model perspective volatility is calculated assuming a log-normal distribution
 for the returns.
+
+The alpha shown above is annualized by scaling by a factor of 12, the periodicity
+of returns. The same goes for volatility, which is scaled by :math:`\sqrt{12}` 
+in order to annualize.
 
     
 
