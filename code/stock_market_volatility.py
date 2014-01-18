@@ -10,8 +10,9 @@ from datetime import date
 import matplotlib.pyplot as plt  
 import pandas as pd
 
-dfsp        = DataReader('^GSPC','yahoo',date(1950,1,1),date(2013,12,31))
+dfsp        = DataReader('MT','yahoo',date(1950,1,1),date(2013,12,31))
 dfsp["Returns"] = dfsp["Adj Close"]/dfsp["Adj Close"].shift(1) - 1
 #dfspmon     = dfsp500.resample('M',how='last')
-dfsp["Volatility"]  = sqrt(252)*pd.rolling_std(dfsp["Returns"],250)
+dfsp["Volatility"]  = sqrt(252)*pd.rolling_std(dfsp["Returns"],45)
 
+dfsp[["Volatility","Close"]].plot(subplots=True)

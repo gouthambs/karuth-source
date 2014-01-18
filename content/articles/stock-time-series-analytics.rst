@@ -34,7 +34,7 @@ The regression equation is given as shown below.
 
 .. math::
 
-	R_stock = \alpha + \beta \times R_market + \epsilon
+	R^stock_i = \alpha + \beta \times R^market_i + \epsilon_i
 	
 In Capital Asset Pricing Model, the returns of the stock :math:`R_stock`
 and that of the market :math:`R_market` are adjusted for the risk-free
@@ -46,13 +46,29 @@ A positive alpha for a stock or portfolio gives you sense of how well your asset
 outperformed a benchmark. 
 
 R-squared is a measure of how well the the returns of a stock is explained by the 
-returns of the benchmark. If your investment goal is to track a particular index,
-then you should chose stocks that show a high R-squared with respect to that index.
-R-squared value of 1 means a perfect correlation with the index, while a value of 0 
-means no correlation whatsoever.
+returns of the benchmark. If your investment goal is to track a particular benchmark,
+then you should chose stocks that show a high R-squared with respect to the benchmark.
+R-squared value of 1 means that the benchmark completely explains the stock returns, 
+while a value of 0 means that the benchmark does not explain the  stock
+returns.
+
+R-squared is defined as:
+
+.. math::
+    
+    R^2 = 1 - SS_res/SS_tot
+
+where 
+
+.. math:: 
+
+    SS_res = \sum_i (R^stock_i - f^stock_i)^2
+
+    SS_tot = \sum_i (R^stock_i - <R^stock>)^2
+
 
 Volatility and Momentum
-------------------------
+-----------------------
 
 The measures discussed in the earlier section are what I would call *relative 
 measures*, i.e., they are with respect to a proxy that is a representation of 
@@ -70,6 +86,8 @@ momentum will be the 1-year return of the stock, where as a 3-year momentum
 will be the 3-year return of the stock.
 
 
+
+
 Python Code
 -----------
 
@@ -81,35 +99,48 @@ One can use data from yahoo finance to calculate the stock beta as shown:
     from datetime import date
     import numpy as np
     import pandas as pd
-        
+    	
     # Grab time series data for 5-year history for the stock (here AAPL)
     # and for S&P-500 Index
     sdate           = date(2008,12,31)
     edate           = date(2013,12,31)
-    df              = DataReader('AAPL','yahoo',sdate,edate)
+    df              = DataReader('WFM','yahoo',sdate,edate)
     dfb             = DataReader('^GSPC','yahoo',sdate,edate)
-        
+    	
     # create a time-series of monthly data points 
     rts             = df.resample('M',how='last')
     rbts            = dfb.resample('M',how='last')
     dfsm            = pd.DataFrame({'s_adjclose' : rts['Adj Close'],
                             'b_adjclose' : rbts['Adj Close']},
                             index=rts.index)
-
+    
+    
     # compute returns
     dfsm[['s_returns','b_returns']] = dfsm[['s_adjclose','b_adjclose']]/ \
         dfsm[['s_adjclose','b_adjclose']].shift(1) -1
     dfsm            = dfsm.dropna()
-            
+        	
     covmat          = np.cov(dfsm["s_returns"],dfsm["b_returns"])
-
+    
     # calculate measures now
     beta            = covmat[0,1]/covmat[1,1]
-    alpha           = 12*np.mean(dfsm["s_returns"])-beta*np.mean(dfsm["b_returns"])
-
+    alpha           = np.mean(dfsm["s_returns"])-beta*np.mean(dfsm["b_returns"])
+    
+    # r_squared     = 1. - SS_res/SS_tot
+    ypred           = alpha + beta * dfsm["b_returns"] 
+    SS_res          = np.sum(np.power(ypred-dfsm["s_returns"],2))
+    SS_tot          = covmat[0,0]*(len(dfsm)-1) # SS_tot is sample_variance*(n-1) 
+    r_squared       = 1. - SS_res/SS_tot
     # 5- year volatiity and 1-year momentum
-    volatility      = np.sqrt(12*covmat[0,0]) # annualize with the factor sqrt(12) 
+    volatility      = np.sqrt(covmat[0,0])
     momentum        = np.prod(1+dfsm["s_returns"].tail(12).values) -1
+    
+    # annualize the numbers
+    prd              = 12. # used monthly returns; 12 periods to annualize
+    alpha            = alpha*prd
+    volatility       = volatility*np.sqrt(prd)
+    
+    print beta,alpha, r_squared, volatility, momentum
 
     
 Some caveats about the sample code. The returns are calculated using the 
