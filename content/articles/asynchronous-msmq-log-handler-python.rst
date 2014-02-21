@@ -31,7 +31,8 @@ with the logging module in python. Here is the ``MSMQHandler`` class:
 			self.computer_name = dest_computer if dest_computer != None \
 					else os.getenv('COMPUTERNAME')
 			qinfo=win32com.client.Dispatch("MSMQ.MSMQQueueInfo")
-			qinfo.FormatName="direct=os:"+self.computer_name+"\\PRIVATE$\\"+self.queue_name
+			qinfo.FormatName="direct=os:"+self.computer_name+"\\PRIVATE$\\"+\
+				self.queue_name
 			try:
 				self.queue = qinfo.Open(2,0)
 			except Exception as e:
@@ -59,11 +60,11 @@ you can incorporate it into your workflow as shown below:
 
 .. code:: python 
 
-	# example.py
-	from customhandler import MSMQHandler
-	import logging
-	
-	lgr = logging.getLogger("Test")            
+    # example.py
+    from customhandler import MSMQHandler
+    import logging
+
+    lgr = logging.getLogger("Test")            
     hnd = MSMQHandler("KaruthQueue","QPyLog") # here KaruthQueue is the private queue name
     lgr.addHandler(hnd)
     lgr.setLevel(logging.INFO)
