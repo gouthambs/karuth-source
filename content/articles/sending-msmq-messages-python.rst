@@ -24,6 +24,7 @@ Sending MSMQ Messages
 Here is a small code snippet that shows you how to send messages using MSMQ.
 
 .. code:: python
+
 	import win32com.client
 	import os	
 
@@ -48,6 +49,7 @@ Receiving MSMQ Messages
 -----------------------
 
 .. code:: python
+
 	import win32com.client
 	import os
 
