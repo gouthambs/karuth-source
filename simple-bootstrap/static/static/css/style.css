@@ -1,39 +1,70 @@
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-}
+body { 
+		padding-top: 80px; /* room for fixed nav-bar */
+	}
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.footer,
-.content,
-.comment {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.nav-pills{
-    display:none;
-}
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
+	.hero-unit {
+		padding: 20px 40px;
+	}
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-  margin-top:40px;
-}
+	.hero-unit h1,
+	.hero-unit p {
+		line-height: 1.3em;
+	}
 
+	.post {
+		padding: 20px 0;
+	}
+
+	.title > h2 {
+		line-height: 1em;
+        margin: 0 0 20px;
+	}
+
+	.title > h2 > a {
+		vertical-align: top;
+	}
+
+	.thumbnails,
+	.thumbnails > .thumbnail {
+		margin-left: 0;
+	}
+    
+    .entry img {
+        margin: 30px 0;    
+    }
+    
+    .author, .date, .tags {
+        margin-bottom: 1em;    
+    }
+
+	footer {
+		padding: 10px 0 40px;
+	}
+
+	.notes-container ol.notes {
+        margin-top: 2em;
+		margin-bottom: 0;
+        padding-left: 0;
+		list-style: none;
+	}
+    
+    body .one .bsa_it_p {
+        display: none;
+    }
+
+/* Custom layouts */
+.story {
+
+}
+.story h1 a, .story h2 a, .story h3 a, .story h4 a, .story h5 a, .story h6 a {
+color: #000;
+}
+img{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
@@ -44,57 +75,6 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-.header .text-muted  a{
-    color:#999;
-    text-decoration:none;
-}
-.entry-content{
-    padding:5px 0 15px;;
-    line-height:1.8;
-}
-.hentry{
-    margin-bottom:18px;
-}
-.pager{
-    margin-bottom:30px;
-}
-.pager ul{
-    margin:0;
-    padding:0;
-}
-.post-info{
-    padding-bottom:30px;
-}
-.post-info address{
-    display:inline;
-}
-.comment{
-    padding-top:15px;
-    padding-bottom:15px;
-}
-.archive-list li{
-    font-size:16px;
-    margin-bottom:10px;
-}
-.bottom-nav{display:none;}
-.bottom-nav a{margin-left:15px;}
 /* code style */
 
 .hightlight { background-color: #ffffcc }
@@ -159,21 +139,3 @@ body {
 .vi { color: #008080 } /* Name.Variable.Instance */
 .il { color: #009999 } /* Literal.Number.Integer.Long */
 /* Responsive: Portrait tablets and up */
-
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .content,
-  .footer,
-  .comment {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
- .nav-pills,.bottom-nav{
-    display:block;
- }
-}

@@ -5,12 +5,25 @@
 {% block content_title %}
 {% endblock %}
 
+
 {% for article in articles_page.object_list %}
-        <article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <div class="entry-content"> {{ article.description if article.description else article.summary }} </div><!-- entry-content -->
-        </article>
+<div class="story">
+    <h3>
+    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+    </h3>
+    {{article.locale_date}} 
+    {% if article.author %} by 
+    <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{article.author}}</a> 
+    {% endif %} 
+    <div class="media">
+        {% if article.summary %}
+         <p >{{article.summary}}</p>
+        {% endif %}
+     </div>
+     <hr>
+</div>
 {% endfor %}
+
 {% include 'pagination.html' %}
 </section><!-- content -->
 {% endblock content %}
