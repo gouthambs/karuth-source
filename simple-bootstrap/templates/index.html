@@ -17,7 +17,15 @@
     {% endif %} 
     <div class="media">
         {% if article.summary %}
-         <p >{{article.summary}}</p>
+         {{article.summary}}
+        {% endif %}
+        <!-- article tags-->
+        {% if article.tags %}
+        <br>
+        <span class="glyphicon glyphicon-tags"></span>&nbsp&nbsp
+           {% for tag in article.tags %}
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>&nbsp&nbsp
+           {% endfor %}
         {% endif %}
      </div>
      <hr>
