@@ -5,7 +5,7 @@ A Short Story of Wall Street
 :tags: finance, equity
 :author: Gouthaman Balaraman
 :description: A look at the volatility of the market from a historical perspective. This 
-    gives us a view of gathering market sentiment.
+    gives us a view of understanding market sentiment historically.
 :keywords: market, volatility, S&P 500
 :coverimage: images/SandPVolatility.png
 
@@ -40,22 +40,25 @@ volatility over the last 33 years. The last 33 years have gone through
 4 recessions, the regions shaded in green. Here are some interesting
 observations:
 
-    1. The markets prior to 1995 were less volatile, by about 24%, than post 1995. The average 
-    volatility was 14% for the time period of 1980 to 1995, in contrast with a 17.3% 
-    for the period 1995 to 2013. 
-    2. On pure percentage terms, the market crash on Black Monday (S&P 500 fell by 25.7% on Oct 19, 1987) 
-    was larger than the market drop in 2008 (21% drop in the week ending October 10, 2008). 
-    But the volatility paints a totally different picture. The uncertainty during 
-    2008 market crash was roughly 20% more than that during the 1987 market crash.
-    3. In August of 2011, the S&P downgraded US credit from AAA to AA+. This made 
-    the market volatile, and that is the little blip you see in 2011. The irony is,
-    prior to 2008 crash, S&P had rated a some of the mortgage backed securities as 
-    high quality debt, even though a lot of them defaulted.
+- The markets prior to 1995 were less volatile, by about 24%, than 
+  post 1995. The average volatility was 14% for the time period of 
+  1980 to 1995, in contrast with a 17.3% for the period 1995 to 2013. 
+
+- On pure percentage terms, the market crash on Black Monday (S&P 500 fell by 25.7% on Oct 19, 1987) 
+  was larger than the market drop in 2008 (21% drop in the week ending October 10, 2008). 
+  But the volatility paints a totally different picture. The uncertainty during 
+  2008 market crash was roughly 20% more than that during the 1987 market crash.
+
+- In August of 2011, the S&P downgraded US credit from AAA to AA+. This made 
+  the market volatile, and that is the little blip you see in 2011. The irony is,
+  prior to 2008 crash, S&P had rated a some of the mortgage backed securities as 
+  high quality debt, even though a lot of them defaulted.
  
 Methodology
 ===========
 
-I chose to use S&P 500 to be representative of the stock market.
+I use S&P 500 to be representative of the stock market. The short term volatility is 
+calculated by computing volatility using daily returns over a 45 day window.
 
 
 
