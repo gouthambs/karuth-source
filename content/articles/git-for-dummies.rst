@@ -5,7 +5,7 @@ Git For Dummies
 :tags: git, programming, github
 :description: This is my notes on using `git` and github. Will work through some basics and discuss some how tos.
 
-I have had to do a lot of googling lately to get familiar with `git`. My understanding of git is a
+I have had to do a lot of googling lately to get familiar with ``git``. My understanding of git is a
 work in progress. Here I summarize some of the basic commands and features that I learnt. I plan to 
 keep this article updated as and when I learn something new.
 
@@ -13,11 +13,11 @@ keep this article updated as and when I learn something new.
 Git Basics
 ----------
 One of the basic concepts in git is the notion of *upstream* and *origin*. The term *upstream* refers to the main
-repository lets say the pandas on github hosted at `https://github.com/pydata/pandas`. However you have forked the 
+repository lets say the pandas on github hosted at `https://github.com/pydata/pandas <https://github.com/pydata/pandas>`. However you have forked the 
 to work on an issue, then the *origin* would refer to the user's fork of the *upstream* repository.
 
 
-- **Initialize repositor**: in an empty folder
+- **Initialize repository**: in an empty folder
   ``
   git init
   ``
@@ -45,7 +45,7 @@ to work on an issue, then the *origin* would refer to the user's fork of the *up
   git remote remove origin
   ``
   
-- Check what the remote repositories are.
+- **View remote repositories**: Check what the remote repositories are attached to your local repo using:
   ``
   git remote -v
   ``
