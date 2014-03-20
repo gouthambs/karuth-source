@@ -1,12 +1,14 @@
-Stock Time Series Analytics
-###########################
+Calculating Stock Beta, Volatility, and More
+############################################
 
 :date: 2014-1-9
 :tags: finance, investing
 :slug: calculating-stock-beta
 :author: Gouthaman Balaraman
 :description: Introduction to calculating Beta, Alpha and R-squared for a stock. This article
-				will also include a python code snippet to calculate these measures.
+will also include a python code snippet to calculate these measures. This method is for instance
+used by sites like yahoo to show beta, volatility etc.
+  
 :keywords: investment, stock beta
 	
  
