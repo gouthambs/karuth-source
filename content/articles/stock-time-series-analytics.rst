@@ -9,7 +9,7 @@ Calculating Stock Beta, Volatility, and More
  will also include a python code snippet to calculate these measures. This method is for instance
  used by sites like yahoo to show beta, volatility etc.
   
-:keywords: investment, stock beta
+:keywords: investment, stock, beta
 	
  
 Have you ever wondered how to calculate the Beta value that is shown in 
