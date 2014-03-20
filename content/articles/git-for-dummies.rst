@@ -17,55 +17,56 @@ repository lets say the pandas on github hosted at `https://github.com/pydata/pa
 to work on an issue, then the *origin* would refer to the user's fork of the *upstream* repository.
 
 
-- **Initialize repository**: in an empty folder
-  ``
-  git init
-  ``
-  You should see a message akin to
-  ``
-  Initialized empty Git repository in /home/username/test/.git/
-  ``
+- **Initialize repository**: in an empty folder::
+
+    git init
+
+  You should see a message akin to::
   
-- **Add remote repository**:  To hook up to your local repository to a remote repository, such as the `pandas` repository on github.
-  ``
-  git remote add upstream https://github.com/pydata/pandas.git
-  ``
-  Note that instead of adding upstream, I could have added my fork as origin as shown below:
-  ``
-  git remote add origin https://github.com/gouthambs/pandas.git
-  ``
+    Initialized empty Git repository in /home/username/test/.git/
   
   
-- **Remove remote repository**: You have made a mistake and added a wrong remote repository. To remove a remote repo:
-  ``
-  git remote remove upstream
-  ``
-  You can do the same to remove a remote origin.
-  ``
-  git remote remove origin
-  ``
+- **Add remote repository**:  To hook up to your local repository to a remote repository, such as the `pandas` repository on 
+  github::
   
-- **View remote repositories**: Check what the remote repositories are attached to your local repo using:
-  ``
-  git remote -v
-  ``
-  This after adding the above pandas repo would show something like:
-  ``
-  upstream	https://github.com/pydata/pandas.git (fetch)
-  upstream	https://github.com/pydata/pandas.git (push)
-  ``
+    git remote add upstream https://github.com/pydata/pandas.git
+  
+  Note that instead of adding upstream, I could have added my fork as origin as shown below::
+  
+    git remote add origin https://github.com/gouthambs/pandas.git
+  
+  
+  
+- **Remove remote repository**: You have made a mistake and added a wrong remote repository. To remove a remote repo::
+  
+    git remote remove upstream
+  
+  You can do the same to remove a remote origin::
+  
+    git remote remove origin
+  
+  
+- **View remote repositories**: Check what the remote repositories are attached to your local repo using::
+  
+    git remote -v
+  
+  This after adding the above pandas repo would show something like::
+  
+    upstream	https://github.com/pydata/pandas.git (fetch)
+    upstream	https://github.com/pydata/pandas.git (push)
+  
 - **Fetching code from remote**: Now that you have hooked up to a remote repository, how do you fetch the code from 
-  there? Lets say we have added remote upstream, and we want to fetch the code, then do the following:
-  ``
-  git fetch upstream
-  ``
+  there? Lets say we have added remote upstream, and we want to fetch the code, then do the following::
+  
+    git fetch upstream
+  
   What this does is it fetches the whole repository, with all its branches and tags etc. Now to actually start using 
   a particular branch you have to checkout.
   
-- **Checkout code**: To checkout the master try
-  ``
-  git checkout master
-  ``
+- **Checkout code**: To checkout the master try::
+  
+    git checkout master
+  
   
 
 
