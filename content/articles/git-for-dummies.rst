@@ -13,7 +13,7 @@ keep this article updated as and when I learn something new.
 Git Basics
 ----------
 One of the basic concepts in git is the notion of *upstream* and *origin*. The term *upstream* refers to the main
-repository lets say the pandas on github hosted at `https://github.com/pydata/pandas <https://github.com/pydata/pandas>`. However you have forked the 
+repository lets say the pandas on github hosted at `https://github.com/pydata/pandas <https://github.com/pydata/pandas>`_. However you have forked the 
 to work on an issue, then the *origin* would refer to the user's fork of the *upstream* repository.
 
 
