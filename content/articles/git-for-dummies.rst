@@ -3,7 +3,7 @@ Git For Dummies
 
 :date: 2014-03-20
 :tags: git, programming, github
-:description: This is my notes on using `git` and github. Will work through some basics and discuss some how tos.
+:description: Work with git could be quite intimidating. Here we will work through some basics and discuss some how tos.
 
 I have had to do a lot of googling lately to get familiar with ``git``. My understanding of git is a
 work in progress. Here I summarize some of the basic commands and features that I learnt. I plan to 
