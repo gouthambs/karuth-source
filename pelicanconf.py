@@ -11,7 +11,9 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
 DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives', 'sitemap')
 SITEMAP_SAVE_AS = 'sitemap.xml'
-
+FILES_TO_COPY = (('extra/robots.txt', 'robots.txt')
+                 #('extra/favicon.ico', 'favicon.ico'),
+                 )
 
 DEFAULT_LANG = u'en'
 
