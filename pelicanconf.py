@@ -9,6 +9,9 @@ SITEURL = 'http://karuth.com'
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
+DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives', 'sitemap')
+SITEMAP_SAVE_AS = 'sitemap.xml'
+
 
 DEFAULT_LANG = u'en'
 
@@ -38,7 +41,6 @@ DEFAULT_PAGINATION = 10
 READERS = {'html': None}
 DISQUS_SITENAME = "karuth"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
-#THEME = "svbhack-theme"
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
 PATH = "content"
