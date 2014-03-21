@@ -3,11 +3,13 @@ Git For Dummies
 
 :date: 2014-03-20
 :tags: git, programming, github
-:description: Work with git could be quite intimidating. Here we will work through some basics and discuss some how tos.
+:description: Working with git could be quite intimidating. Here we will work through some basics and discuss some examples on using git.
 
-I have had to do a lot of googling lately to get familiar with ``git``. My understanding of git is a
-work in progress. Here I summarize some of the basic commands and features that I learnt. I plan to 
-keep this article updated as and when I learn something new.
+Git is a version control with a ton of powerful features. This article is intended to be
+an introduction for dummies (like me). I have had to do a lot of googling lately to get familiar 
+with git. My understanding of git is a work in progress. Here I summarize some of the basic 
+commands and features that I learnt. I plan to keep this article updated as and when I learn 
+something new.
 
 
 Git Basics
@@ -67,6 +69,29 @@ to work on an issue, then the *origin* would refer to the user's fork of the *up
   
     git checkout master
   
+Committing Code Changes
+-----------------------
+Now when you have checked out code and made some modifications. Now you want to share to the world. You have
+to go through three steps:
+
+- **Staging your changes**: This is a way to specify what you want to commit and what you want to ignore. You stage your commit by::
+    
+    git add <filename>
+    
+  What this does is adds your file for commit. If you type ``git status`` you will see that your new file has been 
+  staged for commit. This step gives you control on what files you want to commit and what you don't want to commit.
   
+- **Commit your staged changes**: When you commit your changes, then your changes are registered in your local repository::
+    
+    git commit -m <message>
+    
+  This pushes your code changes to the local repository. Your changes will not be sent to the remote repository
+  such as github yet.
+ 
+- **Push your commits**: You have to push your changes to send it up to the remote repo::
+
+    git push origin master
+    
+  Here we are assuming that you want to push your changes to the master.
 
 
