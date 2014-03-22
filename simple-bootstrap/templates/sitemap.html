@@ -5,6 +5,7 @@
   <url>
     <loc>{{ SITEURL }}/{{ article.url }}</loc>
     <priority>0.8</priority>
+    
   </url>
 
   {% for translation in article.translations %}
@@ -15,18 +16,5 @@
   {% endfor %}
 {% endfor %}
 
-{% for page in pages %}
-  <url>
-    <loc>{{ SITEURL }}/{{ page.url }}</loc>
-    <priority>1.0</priority>
-  </url>
-
-  {% for translation in page.translations %}
-  <url>
-    <loc>{{ SITEURL }}/{{ translation.url }}</loc>
-    <priority>1.0</priority>
-  </url>
-  {% endfor %}
-{% endfor %}
 
 </urlset>
