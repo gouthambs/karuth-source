@@ -17,42 +17,43 @@ Here I will show how one can use the MSMQ to build a custom handler, that can be
 with the logging module in python. Here is the ``MSMQHandler`` class:
 
 .. code:: python
-	
-	# customhandler.py
-	import logging
-	
-	class MSMQHandler(logging.Handler):
-		def __init__(self,queue_name,label_name,dest_computer=None):
-			logging.Handler.__init__(self)
-			import os
-			import win32com.client
-			self.queue_name = queue_name
-			self.label_name = label_name
-			self.computer_name = dest_computer if dest_computer != None \
-					else os.getenv('COMPUTERNAME')
-			qinfo=win32com.client.Dispatch("MSMQ.MSMQQueueInfo")
-			qinfo.FormatName="direct=os:"+self.computer_name+"\\PRIVATE$\\"+\
-				self.queue_name
-			try:
-				self.queue = qinfo.Open(2,0)
-			except Exception as e:
-				self.queue = None
-				raise RuntimeError(str(e))
-			
-		def emit(self,record):
-			import win32com.client
-			if self.queue :
-				msg=win32com.client.Dispatch("MSMQ.MSMQMessage")
-				msg.Label=self.label_name
-				msg.Body = self.format(record)
-				msg.Send(self.queue)
-		def close(self)        :
-			self.acquire()
-			try:
-				if self.queue:
-					self.queue.close()
-			finally:
-				self.release()
+
+	# customhandler.py 
+    import logging 
+
+    class MSMQHandler(logging.Handler):
+        def __init__(self,queue_name,label_name,dest_computer=None):
+            logging.Handler.__init__(self)
+            import os
+            import win32com.client
+            self.queue_name = queue_name
+            self.label_name = label_name
+            self.computer_name = dest_computer if dest_computer is  None\
+                else os.getenv('COMPUTERNAME')
+            qinfo=win32com.client.Dispatch("MSMQ.MSMQQueueInfo")
+            qinfo.FormatName="direct=os:"+self.computer_name+\
+                "\\PRIVATE$\\"+self.queue_name
+            try:
+                self.queue = qinfo.Open(2,0)
+            except Exception as e:
+                self.queue = None
+                raise RuntimeError(str(e))
+
+        def emit(self,record):
+            import win32com.client
+            if self.queue :
+                msg=win32com.client.Dispatch("MSMQ.MSMQMessage")
+                msg.Label=self.label_name
+                msg.Body = self.format(record)
+                msg.Send(self.queue)
+        
+        def close(self)        :
+            self.acquire()
+            try:
+                if self.queue:
+                    self.queue.close()
+            finally:
+                self.release()
 
 
 Once you have the handler in place, and setup a private MSMQ queue, say KaruthQueue, then

@@ -3,6 +3,7 @@ Git For Dummies
 
 :date: 2014-03-20
 :tags: git, programming, github
+:slug: git-for-dummies
 :description: Working with git could be quite intimidating. Here we will work through some basics and discuss some examples on using git.
 
 Git is a version control with a ton of powerful features. This article is intended to be
