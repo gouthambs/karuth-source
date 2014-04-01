@@ -29,7 +29,7 @@ to work on an issue, then the *origin* would refer to the user's fork of the *up
     Initialized empty Git repository in /home/username/test/.git/
   
   
-- **Add remote repository**:  To hook up to your local repository to a remote repository, such as the `pandas` repository on 
+- **Add remote repository**:  To hook up to your local repository to a remote repository, such as the ``pandas`` repository on 
   github::
   
     git remote add upstream https://github.com/pydata/pandas.git

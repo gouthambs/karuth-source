@@ -1,6 +1,10 @@
 /* Space out content a bit */
 body { 
 		padding-top: 80px; /* room for fixed nav-bar */
+         font-size: 16px;
+         font-family: "Open Sans", Arial, sans-serif;
+        /*font-size : 16px;
+        font-family : "Open Sans", sans-serif;*/
 	}
 
 	.hero-unit {
@@ -66,9 +70,9 @@ img{
     max-width: 100%;
 }
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width: 740px) {
   .container {
-    max-width: 730px;
+    max-width: 940px;
   }
 }
 .container-narrow > hr {

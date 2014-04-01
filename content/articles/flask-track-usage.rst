@@ -16,12 +16,13 @@ I also wanted to easily track all the REST apis. That is when I stumbled upon `S
 
 The API and usage is incredibly simple, and as of version 0.0.7 supported Mongo DB storage. Since Mongo was not an
 option for me, I added SQLAlchemy based storage, thus opening doors for a wide array of databases. These additions will
-be released as part of version 0.0.8. 
+be released as part of version 1.0.0. 
 
 Here is a quick-start version on using SQLStorage with Flask-Track-Usage:
 
 .. code:: python
 
+    # mainapp.py
     # Create the Flask 'app'
     from flask import Flask
     app = Flask(__name__)
@@ -57,29 +58,59 @@ You can use Flask-Track-Usage with blueprints as well. This is how you include b
 
 .. code:: python
     
-    # ...
+    # Here app is the Flask app created in mainapp.py 
     app.config['TRACK_USAGE_INCLUDE_OR_EXCLUDE_VIEWS'] = 'include'
 
     # Make an instance of the extension
     t = TrackUsage(app, SQLStorage(conn_str="sqlite:///D:\\usage_tracking.db"))
 
+    # exclude just the a_blueprint out
     from my_blueprints import a_blueprint
+    t.exclude_blueprint(a_blueprint)
 
-This is how you exclude blueprints
+What we have done here is to include all views, except for the ones in the blueprint ``a_blueprint``.
+You can instead exclude all by default, and include just the specific ones as shown below.
 
 .. code:: python
 
-    # ...
+    # Here app is the Flask app created in mainapp.py 
     app.config['TRACK_USAGE_INCLUDE_OR_EXCLUDE_VIEWS'] = 'exclude'
-    from my_blueprints import b_blueprint
     
-    # Now ALL of b_blueprints will be in the exclude list
-    t.exclude_blueprint(b_blueprint)
+    # Make an instance of the extension
+    t = TrackUsage(app, SQLStorage(conn_str="sqlite:///D:\\usage_tracking.db"))
+    
+    from my_blueprints import a_blueprint
+    t.include_blueprint(a_blueprint)
 
-You can even use the `get_usage` method in the `Storage` object to include
-usage statistics part of your web application.
+Once you have setup the extension to track usage, you can even use the ``_get_usage`` method
+part of the ``Storage`` object to view the usage hits. This method returns a list of JSON
+dict and has the following schema::
 
+    [
+        {
+                'url': str,
+                'user_agent': {
+                    'browser': str,
+                    'language': str,
+                    'platform': str,
+                    'version': str,
+                },
+                'blueprint': str,
+                'view_args': dict or None
+                'status': int,
+                'remote_addr': str,
+                'authorization': bool,
+                'ip_info': str or None,
+                'path': str,
+                'speed': float,
+                'date': datetime,
+        },
+        {
+            ....
+        }
+    ]
 
     
+
     
 	
