@@ -1,5 +1,5 @@
-Usage Tracking for Flask Apps
-#############################
+Flask Track Usage Primer
+########################
 
 :date: 2014-3-26
 :tags: Programming, Python
