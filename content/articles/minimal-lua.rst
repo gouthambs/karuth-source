@@ -50,4 +50,4 @@ Here is a minimal Lua(V5.1) - C++  example to get one started.
 
 
 This needs to be compiled using a C++ compiler and linked to Lua library. When you run the 
-executable, you should see `Hello World!` printed on the screen.
+executable, you should see ``Hello World!`` printed on the screen.
