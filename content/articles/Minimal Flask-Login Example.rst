@@ -98,7 +98,7 @@ Lets delve deeper into this example, and I will explain each part of the code in
   login_manager.init_app(app)
   
 
-The first five lines of the code import the required modules, and initializes the Flask app. Then
+The first five lines of the code import the required modules, and initializes the Flask ``app``. Then
 the `LoginManager` instance is created and then is configure for login. Now lets try to understand
 the `User` class.
 
@@ -118,15 +118,15 @@ the `User` class.
           return cls.user_database.get(id)
           
           
-Here I have created the `User` class by overloading the `UserMixin` class. The `UserMixin` class
-implements some of the default methods, and hence is a convenient starting point. The `dict` `user_database`
-is a proxy for all the database code one would need. I am abstracting this away as a `dict` for simplicity.
+Here I have created the ``User`` class by overloading the ``UserMixin`` class. The ``UserMixin`` class
+implements some of the default methods, and hence is a convenient starting point. The ``dict`` ``user_database``
+is a proxy for all the database code one would need. I am abstracting this away as a ``dict`` for simplicity.
 The `get` class method returns the user data from `user_database`.
 
 
-For the `LoginManager` to handle authentication, we have to provide a method for it to load user.
-Here I use the generic `@login_manager.request_loader` decorator to decorate the `load_user` function.
-The expected behavior of a `request_loader` is to return a `User` instance if the provided credentials are
+For the ``LoginManager`` to handle authentication, we have to provide a method for it to load user.
+Here I use the generic ``@login_manager.request_loader`` decorator to decorate the ``load_user`` function.
+The expected behavior of a ``request_loader`` is to return a ``User`` instance if the provided credentials are
 valid, and return `None` otherwise.
 
 .. code:: python
@@ -146,17 +146,17 @@ valid, and return `None` otherwise.
                   return user
       return None 
 
-The `load_user` looks for a token in `Authorization` header, or the `request` arguments. If a token
-is provided, then I return an instance of `User` if the token is valid, and return `None` otherwise.
-Here I assume that a valid token would be of the form `<username>:<password>`. This is a naive token,
-and should not be used in practice. Using serializers from `itsdangerous` package can come handy. We
+The ``load_user`` looks for a token in ``Authorization`` header, or the ``request`` arguments. If a token
+is provided, then I return an instance of ``User`` if the token is valid, and return ``None`` otherwise.
+Here I assume that a valid token would be of the form ``<username>:<password>``. This is a naive token,
+and should not be used in practice. Using serializers from ``itsdangerous`` package can come handy. We
 will touch upon these issues in another post.
 
-Once this setup is done, in order to require authentication for a route, use the `@login_required` 
+Once this setup is done, in order to require authentication for a route, use the ``@login_required``
 decorator.
 
 Run the above script, and if you visit the LocalHostUnAuthenticated_ route without 
-a token you will get a `401 Unauthorized` message. If you pass a token to 
+a token you will get a ``401 Unauthorized`` message. If you pass a token to 
 LocalHostAuthenticated_, then you will be allowed access to the protected page.
 
 
