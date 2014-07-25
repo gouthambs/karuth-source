@@ -155,13 +155,13 @@ will touch upon these issues in another post.
 Once this setup is done, in order to require authentication for a route, use the `@login_required` 
 decorator.
 
-Run the above script, and if you visit the `http://localhost:5000/protected/` route without 
-a token you will get a `401 Unauthorized` message. If you pass a token as 
-`http://localhost:5000/protected/?token=JohnDoe:John`, then you will be allowed access to 
-the protected page.
+Run the above script, and if you visit the LocalHostUnAuthenticated_ route without 
+a token you will get a `401 Unauthorized` message. If you pass a token to 
+LocalHostAuthenticated_, then you will be allowed access to the protected page.
 
 
-
+.. _LocalHostUnAuthenticated: http://localhost:5000/protected/
+.. _LocalHostAuthenticated: http://localhost:5000/protected/?token=JohnDoe:John
 
 
 
