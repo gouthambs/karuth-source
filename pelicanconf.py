@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Gouthaman Balaraman'
-SITENAME = u'Karuth'
+SITENAME = u'Gouthaman Balaraman'
 #SITESUBTITLE	= u"Truth in Numbers"
-SITEURL = 'http://karuth.com'
+SITEURL = 'http://gouthamanbalaraman.com'
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
