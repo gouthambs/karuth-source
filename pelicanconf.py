@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Gouthaman Balaraman'
 #SITESUBTITLE	= u"Truth in Numbers"
-SITEURL = 'http://gouthamanbalaraman.com'
+SITEURL = 'http://blog.gouthamanbalaraman.com'
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
@@ -41,7 +41,7 @@ DEFAULT_PAGINATION = 10
 #LOCAL_BOOTSTRAP = True
 
 READERS = {'html': None}
-DISQUS_SITENAME = "karuth"
+DISQUS_SITENAME = "gouthamanbalaramancom"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
