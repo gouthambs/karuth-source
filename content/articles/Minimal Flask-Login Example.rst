@@ -25,6 +25,9 @@ This can be done using `pip` as shown below::
   >pip install flask-login
   
 
+Example Code
+------------
+
 Here is the full source code that we are about to discuss:
 
 .. code:: python
@@ -84,6 +87,9 @@ Here is the full source code that we are about to discuss:
       app.run(port=5000,debug=True)
 
 
+
+Code Explained
+--------------
 
 Lets delve deeper into this example, and I will explain each part of the code in greater detail here.
 
@@ -162,6 +168,20 @@ LocalHostAuthenticated_, then you will be allowed access to the protected page.
 
 .. _LocalHostUnAuthenticated: http://localhost:5000/protected/
 .. _LocalHostAuthenticated: http://localhost:5000/protected/?token=JohnDoe:John
+
+
+Conclusion
+----------
+
+This article explained how to write token based authentication using ``Flask-Login`` extension. The focus
+of this article was explaining the basic workings of ``flask-login`` without having to setup database or
+even the token generation. Once the basic plumbing is setup, one can extend this example in two ways: 
+
+- have a robust token generation and token validation,
+- have a database to store and retrive user credentials.
+
+
+
 
 
 
