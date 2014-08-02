@@ -4,8 +4,11 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Gouthaman Balaraman'
-#SITESUBTITLE	= u"Truth in Numbers"
-SITEURL = 'http://blog.gouthamanbalaraman.com'
+SITEURL = 'http://gouthamanbalaraman.com'
+#SITEURL = '/'
+ARTICLE_URL = 'blog/{slug}.html'
+ARTICLE_SAVE_AS = 'blog/{slug}.html'
+
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
@@ -29,7 +32,7 @@ TRANSLATION_FEED_ATOM = None
 #          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-TWITTER_HANDLE = 'quantspeak'
+TWITTER_HANDLE = 'gsbala'
 #SOCIAL = (('Twitter','https://twitter.com/'+TWITTER_HANDLE),)
             #(('You can add links in your config file', '#'),
           #('Another social link', '#'),)

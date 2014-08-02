@@ -3,7 +3,7 @@ import fabric.contrib.project as project
 import os
 
 # Local path configuration (can be absolute or relative to fabfile)
-env.deploy_path = '..\gouthambs.github.io'
+env.deploy_path = 'output'
 DEPLOY_PATH = env.deploy_path
 
 # Remote server configuration
@@ -22,7 +22,7 @@ def clean():
         local('mkdir {deploy_path}'.format(**env))
 
 def build():
-    local('pelican -s pelicanconf.py -o .\\..\\gouthambs.github.io')
+    local('pelican -s pelicanconf.py')
 
 def rebuild():
     clean()
