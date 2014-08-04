@@ -10,9 +10,15 @@ Running ZEO as a Windows Service
 
 The other day, I wanted to run ZEO as a Windows service. The ``runzeo.py`` part of ``ZEO`` will let you
 run the client, but it doesn't work well for deployment on a windows machine. So I used ``pywin32`` to wrap
-the ``runzeo.py`` into a Windows Service. You can fetch the source from my github repo_.
+the ``runzeo.py`` into a Windows Service. 
 
-When you run::
+
+Code
+----
+
+You can fetch the source from my github repo_. I do intend to put it on PyPi when I have the time
+
+You can run from ``cmd`` as Administrator::
 
   > python zeo_winservice.py
   
@@ -35,6 +41,10 @@ you will be given the service options, as shown below::
                    the specified period.
                    
                    
+Installing the Service
+----------------------
+
+Before you try to install, make sure you are running ``cmd`` as Administrator.
 I like to install such that it will start up automatically, as shown below::
 
   >python zeo_winservice.py --startup=auto install
@@ -76,6 +86,16 @@ script, you need to start it by::
   
 You will also be able to access the service from ``task manager`` or the ``Windows Services`` app.
 
+
+Logging
+-------
+
+The logs from the service are sent to the windows ``Event Log`` which can be accessed by opening
+the ``Event Viewer``. Once you open the ``Event Viewer``, the logs can be found under::
+
+  Event Viewer->Windows Logs->Application
+  
+The logs from this script can be found under ``ZEO WinService`` in the Source column.
 
 
 .. _repo: https://github.com/gouthambs/ZEO-WinService
