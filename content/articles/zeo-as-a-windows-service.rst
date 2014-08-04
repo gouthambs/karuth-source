@@ -16,7 +16,8 @@ the ``runzeo.py`` into a Windows Service.
 Code
 ----
 
-You can fetch the source from my github repo_. I do intend to put it on PyPi when I have the time
+You can fetch the source from my github repo_. This script requires ``pywin32`` and ``ZEO`` to run.
+I do intend to put it on PyPi when I have the time
 
 You can run from ``cmd`` as Administrator::
 
