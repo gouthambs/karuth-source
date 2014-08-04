@@ -37,13 +37,11 @@ you will be given the service options, as shown below::
                    
 I like to install such that it will start up automatically, as shown below::
 
-  >python zeo_service.py --startup=auto install
+  >python zeo_winservice.py --startup=auto install
   
 which gives you the following screen with ZEO options::
 
-  Installing service ZEO Service
-  Changing service configuration
-  Installing the ZEO Service
+  Installing service ZEO WinService
   Start the ZEO storage server.
   
   Usage: %s [-C URL] [-a ADDRESS] [-f FILENAME] [-h]
@@ -74,7 +72,7 @@ An example command line argument is::
 Here I am specifying that ZEO be run with the ``file.fs`` on ``localhost`` port ``9999``. After installing the
 script, you need to start it by::
 
-  >python zeo_service.py start
+  >python zeo_winservice.py start
   
 You will also be able to access the service from ``task manager`` or the ``Windows Services`` app.
 
