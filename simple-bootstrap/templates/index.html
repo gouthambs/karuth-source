@@ -16,7 +16,9 @@
     <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{article.author}}</a> 
     {% endif %} 
     <div class="media">
-        {% if article.summary %}
+        {% if article.description %}
+          {{ article.description }}
+        {% elif article.summary %}
          {{article.summary}}
         {% endif %}
         <!-- article tags-->
