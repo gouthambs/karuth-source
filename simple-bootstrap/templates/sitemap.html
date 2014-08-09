@@ -17,4 +17,11 @@
 {% endfor %}
 
 
+{% for tag in tag_cloud %}
+  <url>
+	<loc>{{SITEURL}}/{{tag.0.url}}</loc>
+	<priority>0.7</priority>
+  </url>
+{% endfor %}
+
 </urlset>

@@ -4,8 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Gouthaman Balaraman'
-SITEURL = 'http://gouthamanbalaraman.com'
-#SITEURL = '/'
+SITEURL = '/'
 ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
 
@@ -44,12 +43,10 @@ TWITTER_HANDLE = 'gsbala'
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 #LOCAL_BOOTSTRAP = True
 
 READERS = {'html': None}
-DISQUS_SITENAME = "gouthamanbalaramancom"
-GOOGLE_ANALYTICS = 'UA-46714334-1'
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
 PATH = "content"

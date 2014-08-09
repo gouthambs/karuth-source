@@ -2,7 +2,7 @@ Option Model Handbook, Part I: Introduction to Option Models
 ############################################################
 
 :date: 2014-08-08
-:tags: Finance, Options, Binomial Tree
+:tags: finance, option models, binomial tree
 :slug: option-model-handbook-part-I-introduction-to-option-models
 :author: Gouthaman Balaraman
 :description: This handbook gives a concise introduction to option models.
@@ -18,8 +18,6 @@ and binomial tree option pricing models.
 **Contents:**
 
 I. Introduction to Option Models
-
-
 
 
 Introduction to Option Models
