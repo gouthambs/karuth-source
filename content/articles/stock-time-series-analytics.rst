@@ -34,12 +34,10 @@ the returns of stock as a function of the returns of the market benchmark (such 
 and fit it with a straight line, then beta is nothing but the slope of the fitted line. 
 The regression equation is given as shown below.
 
-.. math::
-
-	R^stock_i = \alpha + \beta \times R^market_i + \epsilon_i
+$$ R^{stock}_i = \\alpha + \\beta \\times R^{market}_i + \\epsilon_i $$
 	
-In Capital Asset Pricing Model, the returns of the stock :math:`R_stock`
-and that of the market :math:`R_market` are adjusted for the risk-free
+In Capital Asset Pricing Model, the returns of the stock $R^{stock}$
+and that of the market $R^{market}$ are adjusted for the risk-free
 rate. Here for simplicity I leave that out. Given the current low interest rate 
 environment, this adjustment will add little value.
 
@@ -47,26 +45,23 @@ Alpha of a stock gives you a measure of the excess return with respect to the be
 A positive alpha for a stock or portfolio gives you sense of how well your asset
 outperformed a benchmark. 
 
-R-squared is a measure of how well the the returns of a stock is explained by the 
+The $R^2$ is a measure of how well the the returns of a stock is explained by the 
 returns of the benchmark. If your investment goal is to track a particular benchmark,
-then you should chose stocks that show a high R-squared with respect to the benchmark.
-R-squared value of 1 means that the benchmark completely explains the stock returns, 
-while a value of 0 means that the benchmark does not explain the  stock
+then you should chose stocks that show a high $R^2$ with respect to the benchmark.
+The $R^2$ value of $1$ means that the benchmark completely explains the stock returns, 
+while a value of $0$ means that the benchmark does not explain the  stock
 returns.
 
 R-squared is defined as:
 
-.. math::
-    
-    R^2 = 1 - SS_res/SS_tot
+$$    R^2 = 1 - SS_{res}/SS_{tot} $$
 
 where 
 
-.. math:: 
 
-    SS_res = \sum_i (R^stock_i - f^stock_i)^2
+$$    SS_{res} = \\sum_i (R^{stock}_i - f^{stock}_i)^2 $$
 
-    SS_tot = \sum_i (R^stock_i - <R^stock>)^2
+$$    SS_{tot} = \\sum_i (R^{stock}_i - <R^{stock}>)^2 $$
 
 
 Volatility and Momentum
@@ -153,7 +148,7 @@ model perspective volatility is calculated assuming a log-normal distribution
 for the returns.
 
 The alpha shown above is annualized by scaling by a factor of 12, the periodicity
-of returns. The same goes for volatility, which is scaled by :math:`\sqrt{12}` 
+of returns. The same goes for volatility, which is scaled by $\\sqrt{12}$
 in order to annualize.
 
     

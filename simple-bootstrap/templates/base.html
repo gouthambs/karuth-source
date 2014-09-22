@@ -9,7 +9,6 @@
     {% if USE_OPEN_GRAPH is not defined %}
         {% set USE_OPEN_GRAPH = True %}
     {% endif %}
-
     {% if USE_OPEN_GRAPH %}
         {% if OPEN_GRAPH_FB_APP_ID %}
         <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
@@ -36,7 +35,7 @@
     {% endif %}
         {% if LOCAL_BOOTSTRAP %}
         <!--link href="{{ SITEURL }}/theme/static/css/journal-bootstrap.min.css" rel="stylesheet" /-->
-        <!--link href="{{ SITEURL }}/theme/static/css/bootstrap.readable.min.css" rel="stylesheet" /-->
+        <link href="{{ SITEURL }}/theme/static/css/bootstrap.readable.min.css" rel="stylesheet" />
         {% else %}
         <link href="http://bootswatch.com/readable/bootstrap.css" rel="stylesheet"/>
         <link href="http://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet"/>
@@ -70,6 +69,9 @@
         {% endblock head %}
         <!-- Google Analytics -->
         {% include "analytics.html" %}
+	{% if page and page.mathjax or article and article.mathjax %}
+           {{ MATHJAXSCRIPT }}
+	{% endif %}
     </head>
 
     <body>

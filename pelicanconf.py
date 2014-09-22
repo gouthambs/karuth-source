@@ -3,9 +3,11 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Gouthaman Balaraman'
-SITENAME = u'Karuth'
-#SITESUBTITLE	= u"Truth in Numbers"
-SITEURL = 'http://karuth.com'
+SITENAME = u'Gouthaman Balaraman'
+SITEURL = '/'
+ARTICLE_URL = 'blog/{slug}.html'
+ARTICLE_SAVE_AS = 'blog/{slug}.html'
+
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_DATE_FORMAT ='%B %d, %Y'
@@ -14,6 +16,10 @@ SITEMAP_SAVE_AS = 'sitemap.xml'
 STATIC_PATHS = [
     'robots.txt','extra'
     ]
+
+PLUGIN_PATHS = ['./pelican-plugins/']
+PLUGINS = ['render_math']
+
 
 DEFAULT_LANG = u'en'
 
@@ -29,7 +35,7 @@ TRANSLATION_FEED_ATOM = None
 #          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-TWITTER_HANDLE = 'quantspeak'
+TWITTER_HANDLE = 'gsbala'
 #SOCIAL = (('Twitter','https://twitter.com/'+TWITTER_HANDLE),)
             #(('You can add links in your config file', '#'),
           #('Another social link', '#'),)
@@ -37,12 +43,10 @@ TWITTER_HANDLE = 'quantspeak'
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 #LOCAL_BOOTSTRAP = True
 
 READERS = {'html': None}
-DISQUS_SITENAME = "karuth"
-GOOGLE_ANALYTICS = 'UA-46714334-1'
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
 PATH = "content"

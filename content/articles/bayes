@@ -1,0 +1,19 @@
+Understanding Naive Baye's Classifier 
+#####################################
+
+:author: Gouthaman Balaraman
+:date: 2014-08-06
+:tag: Machine Learning, Classifier
+:keywords: Machine Learning, Classifier, Naive Baye's Classifier
+:slug: understanding-naive-bayes-classifier
+:description: This article introduces the notion of Naive Baye's classifier,
+ using a simple example.
+ 
+Let's say we have a bunch of fruits in a basket, and the task is to write
+an algorithm to classify them into an *apple* or a *banana*. How would one logically
+tackle this task? A natural way is to describe a set of features for *apple* and 
+*banana*, and check if the fruits in the basket match those features. This problem
+is what is called as a *classification* problem in the field of *Machine Learning*.
+
+Let us say the features that are of interest are, the *color* and *shape*.
+
