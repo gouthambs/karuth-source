@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Gouthaman Balaraman'
 SITEURL = '/'
+LOCAL_BOOTSTRAP  = True
 ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
 
