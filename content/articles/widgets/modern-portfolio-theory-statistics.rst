@@ -9,6 +9,11 @@ Modern Portfolio Theory Statistics
 :keywords: finance
 
 
+This widget shows Modern Portfolio Theory (MPT) statistics for a selected list of stocks. The calculations were made
+using Quandl_ data in the WIKI_ dataset. The ETF SPY was used as a benchmark using a 5-year time horizon. If the time
+series is not long enough, then an N/A is shown. You can also download the CSV_File_ containing all the metrics.
+
+
 .. raw:: html
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
@@ -42,7 +47,7 @@ Modern Portfolio Theory Statistics
 				<fieldset>
 					<!-- Form Name -->
 					<!-- Text input-->
-					<div class="form-group col-md-4 col-md-offset-2">
+					<div class="form-group col-md-2 ">
 					  <div class="">
 					  	<input id="ticker" name="ticker" type="text" placeholder="TICKER" class="form-control input-md" ng-model="ticker">
 					  </div>
@@ -57,7 +62,7 @@ Modern Portfolio Theory Statistics
 				</fieldset>
 			</form>
 			<hr/>
-			<div style="height:320px; overflow hidden;">
+			<div >
 				<div id="results" ng-show="tickerData !=null">
 					<div class="col-md-6">
 						<table class="table table-striped col-md-6">
@@ -134,15 +139,11 @@ Modern Portfolio Theory Statistics
 					{{message}}
 				</div>
 			</div>
-			<hr>
+			
         </div> <!-- controller -->
     </div><!--app -->
     
     
-
-This widget shows Modern Portfolio Theory (MPT) statistics for a selected list of stocks. The calculations were made
-using Quandl_ data in the WIKI_ dataset. The ETF SPY was used as a benchmark using a 5-year time horizon. If the time
-series is not long enough, then an N/A is shown. You can also download the CSV_File_ containing all the metrics.
 
 
 .. _Quandl:  https://www.quandl.com/
