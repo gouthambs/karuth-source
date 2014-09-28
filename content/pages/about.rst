@@ -11,4 +11,4 @@ I am Gouthaman Balaraman, and I work as a Quant in a Financial Services Firm.
 I have a Ph.D. in Theoretical Physics and my interests are in quantitative 
 finance, high-performance computing, and economics.
 
-You can contact me at contact[at]gouthamanbalaraman[dot]com.
+You can contact me at gouthaman[dot]balaraman[at]gmail[dot]com.
