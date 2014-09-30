@@ -44,7 +44,7 @@ $$ pu^2 + (1−p)d^2 − [ pu+ (1−p)d]^2 = \\sigma^2 \\Delta t $$
 On ignoring terms of order higher than $\\Delta t^2$ and making use of 
 $ud = 1$, we get
 
-\\begin{equation} u &=& e^{\\sigma \\sqrt{\\Delta t}} \\nonumber \\ d &=& e^{-\sigma\sqrt{\Delta t}} \\end{equation}
+\\begin{equation} u &=& e^{\\sigma \\sqrt{\\Delta t}} \\nonumber \\\\ d &=& e^{-\sigma\sqrt{\Delta t}} \\end{equation}
 
 One can make use of the above construction to value an option. Let $f$
 be the current value of an option on a stock. Let the payoﬀ of the option 
