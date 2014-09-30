@@ -26,6 +26,8 @@ series is not long enough, then an N/A is shown. You can also download the CSV_F
 			$http.get(url).success(function(respData, status, headers, config){
 				var data = d3.csv.parse( respData ); 			
 				$scope.data = data;
+                $scope.ticker = 'AAPL';
+                $scope.fetchTickerData($scope.ticker);
 			});
 			$scope.fetchTickerData = function(ticker){
 				$scope.message = "";
@@ -62,7 +64,7 @@ series is not long enough, then an N/A is shown. You can also download the CSV_F
 				</fieldset>
 			</form>
 			<hr/>
-			<div >
+			<div style="height:800px; ">
 				<div id="results" ng-show="tickerData !=null">
 					<div class="col-md-6">
 						<table class="table table-striped col-md-6">
