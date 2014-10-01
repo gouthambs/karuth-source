@@ -15,10 +15,14 @@ This is a series of articles pertaining to option model pricing. Here I will
 explain the various concepts such as risk-neutral valuation, Black-Scholes formula,
 and binomial tree option pricing models. 
 
-.. include:: contents.txt
+**Contents:**
+
+I. `Introduction to Option Models <|filename|option_models.rst>`_
+II. `Introduction to Binomial Trees <|filename|intro_binomial_trees.rst>`_
+
 
 Introduction to Binomial Trees
-==============================
+------------------------------
 
 .. image:: /images/binomialtree.png 
 	:alt: BinomialTree
