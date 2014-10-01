@@ -15,9 +15,7 @@ This is a series of articles pertaining to option model pricing. Here I will
 explain the various concepts such as risk-neutral valuation, Black-Scholes formula,
 and binomial tree option pricing models. 
 
-**Contents:**
-
-I. Introduction to Option Models
+.. include:: contents.txt
 
 
 Introduction to Option Models
