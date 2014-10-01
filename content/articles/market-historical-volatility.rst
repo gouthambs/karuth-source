@@ -32,7 +32,7 @@ have come before?
 The Voice of Uncertainty
 ------------------------
 
-.. image:: images/SandPVolatility.png 
+.. image:: /images/SandPVolatility.png 
 	:alt: SandPVolatility
     
 The picture above shows the S&P 500 index at the top, and its short-term 

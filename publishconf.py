@@ -16,7 +16,7 @@ DEFAULT_DATE_FORMAT ='%B %d, %Y'
 DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives', 'sitemap')
 SITEMAP_SAVE_AS = 'sitemap.xml'
 STATIC_PATHS = [
-    'robots.txt', 'extra'
+    'robots.txt', 'extra', 'images'
     ]
 
 PLUGIN_PATHS = ['./pelican-plugins/']

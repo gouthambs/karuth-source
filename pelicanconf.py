@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Gouthaman Balaraman'
-SITEURL = '/'
+#SITEURL = '/'
 LOCAL_BOOTSTRAP  = True
 ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
@@ -15,7 +15,7 @@ DEFAULT_DATE_FORMAT ='%B %d, %Y'
 DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives', 'sitemap')
 SITEMAP_SAVE_AS = 'sitemap.xml'
 STATIC_PATHS = [
-    'robots.txt','extra'
+    'robots.txt','extra','images'
     ]
 
 PLUGIN_PATHS = ['./pelican-plugins/']
