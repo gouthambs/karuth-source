@@ -27,11 +27,12 @@
         {% if article.tags %}
         <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;
            {% for tag in article.tags %}
-            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>&nbsp;&nbsp;
+            <span class="label label-default"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>&nbsp;&nbsp;
            {% endfor %}
+           <br>
         {% endif %}
+        <hr>
      </div>
-     <hr>
 </div>
 {% endfor %}
 

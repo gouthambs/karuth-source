@@ -1,10 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }} - {{SITENAME}}{% endblock title %}
 
-
-{% block content %}
-
-<div class="bs-docs-section">
+{% block headcontent %}
     <div class="page-header">
         <h1>{{ article.title }}</h1>
      <!--span class="glyphicon glyphicon-calendar"></span-->&nbsp;{{ article.locale_date }} 
@@ -14,6 +11,12 @@
      <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">&nbsp;{{article.author}} </a>
      {% endif %}
      </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="bs-docs-section">
+    
      <!-- article description -->
       {% if article.description %}
          <p class="lead">{{article.description}}</p>
@@ -27,11 +30,24 @@
      {% if article.tags %}
         <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;
         {% for tag in article.tags %}
-            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>&nbsp;&nbsp;
+            <span class="label label-default"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>&nbsp;&nbsp;
         {% endfor %}
         <br>
      {% endif %}
-     
+     <hr/>
+    
+    {% if article.related_posts %}
+    <strong>Related Post</strong>
+        <ul>
+        {% for related_post in article.related_posts %}
+            <li>
+                <a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+        <hr/>
+    {% endif %}
+
      <!-- article comments -->
      {% if DISQUS_SITENAME %}
     <div class="comment">
@@ -53,3 +69,4 @@
     {% endif %}
 </div>    
 {% endblock %}
+

@@ -100,11 +100,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                {% block content %}
+                {% block headcontent %}
                 {% endblock %}
                 </div>
             </div>
-            
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                {% block content %}
+                {% endblock %}
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                {% block tailcontent %}
+                {% endblock %}
+                </div>
+            </div>
             <footer id="contentinfo" class="footer">
             {#
                     <nav class="pull-right bottom-nav">
