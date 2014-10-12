@@ -20,7 +20,7 @@ STATIC_PATHS = [
 
 #plugin parameters
 PLUGIN_PATHS = ['./pelican-plugins/']
-PLUGINS = ['render_math', 'related_posts']
+PLUGINS = ['related_posts']
 
 RELATED_POSTS_MAX = 5
 

@@ -36,7 +36,7 @@ the returns of stock as a function of the returns of the market benchmark (such 
 and fit it with a straight line, then beta is nothing but the slope of the fitted line. 
 The regression equation is given as shown below.
 
-$$ R^{stock}_i = \\alpha + \\beta \\times R^{market}_i + \\epsilon_i $$
+$$ R^{stock}_i = \\alpha + \\beta \\times R^{market}_i + \\epsilon_i  $$
 	
 In Capital Asset Pricing Model, the returns of the stock $R^{stock}$
 and that of the market $R^{market}$ are adjusted for the risk-free
