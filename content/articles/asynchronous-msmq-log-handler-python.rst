@@ -28,7 +28,7 @@ with the logging module in python. Here is the ``MSMQHandler`` class:
             import win32com.client
             self.queue_name = queue_name
             self.label_name = label_name
-            self.computer_name = dest_computer if dest_computer is  None\
+            self.computer_name = dest_computer if not dest_computer is  None\
                 else os.getenv('COMPUTERNAME')
             qinfo=win32com.client.Dispatch("MSMQ.MSMQQueueInfo")
             qinfo.FormatName="direct=os:"+self.computer_name+\
