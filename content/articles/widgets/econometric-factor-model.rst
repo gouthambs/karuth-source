@@ -5,7 +5,7 @@ Econometric Factor Model
 :tags: finance, investing, widget
 :slug: econometric-factor-model
 :author: Gouthaman Balaraman
-:description: An econometric factor model to explain factor exposures and exposures
+:description: An econometric factor model to explain factor exposures and risk
 :keywords: finance, factor model
 
 
