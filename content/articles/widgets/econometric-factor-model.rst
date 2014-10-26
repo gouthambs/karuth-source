@@ -113,9 +113,9 @@ Econometric Factor Model
 						<table class="table table-bordered col-md-12">
                             <thead>
 								<tr>
-									<th> <span class = "pull-left value">Factor</span></td>
-									<th> <span class = "pull-right value"> Exposure </span></td>
-                                    <th> <span class = "pull-right value"> Standard Deviation </span></td>
+									<th> <span class = "pull-left key">Factor</span></td>
+									<th> <span class = "pull-right key"> Exposure </span></td>
+                                    <th> <span class = "pull-right key"> Standard Deviation </span></td>
 								</tr>
 							</thead>
 							<tbody>
@@ -132,14 +132,14 @@ Econometric Factor Model
 						<table class="table table-bordered col-md-12">
                             <thead>
 								<tr>
-									<th> <span class = "pull-right value">Total Risk (%)</span></td>
-									<th> <span class = "pull-right value">Diversifiable Risk (%)</span></td>
-                                    <th> <span class = "pull-right value"> Non-Diversifiable Risk (%)</span></td>
+									<th> <span class = "pull-right key">Total Risk (%)</span></td>
+									<th> <span class = "pull-right key">Diversifiable Risk (%)</span></td>
+                                    <th> <span class = "pull-right key"> Non-Diversifiable Risk (%)</span></td>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td> <span class = "pull-right key">{{tickerData.TotalRisk}}</span></td>
+									<td> <span class = "pull-right value">{{tickerData.TotalRisk}}</span></td>
 									<td> <span class = "pull-right value"> {{tickerData.DiversifiableRisk}} </span></td>
                                     <td> <span class = "pull-right value"> {{tickerData.NonDiversifiableRisk}} </span></td>
 								</tr>
