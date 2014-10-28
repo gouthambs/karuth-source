@@ -13,7 +13,7 @@ An Elegy
 | Mother to our dads,
 | Grandmother to us,
 | Great grandmother to our offspring
-| And an affectionate human being to all
+| And an affectionate human being to all.
 |
 | May we also remember the spirit that represents the person she was
 | And what she has left in us - in our little genes and in  our memories.

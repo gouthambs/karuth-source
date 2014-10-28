@@ -9,6 +9,9 @@ Econometric Factor Model
 :keywords: finance, factor model
 
 
+Please refer to `Understanding Econometric Factor Model <|filename|./../understanding-econometric-factor-model.rst>`_ 
+for details.
+
     
 .. raw:: html
 
@@ -49,7 +52,7 @@ Econometric Factor Model
         myModule.controller('mptCtrl', ['$scope','$http', function($scope, $http){
 			/* Initialization steps */
 			var url = "/extra/data/factormodels/fm_5y_latest.csv";
-            $scope.factorItems = ["Alpha","Unemployment","ConsumerSentiment","Market","Size","ValueGrowth"];
+            $scope.factorItems = ["Unemployment","ConsumerSentiment","Market","Size","ValueGrowth"];
             $scope.riskItems = ["TotalRisk","DiversifiableRisk","NonDiversifiableRisk"];
             $scope.myData = [10,20,30,40,60, 80, 20, 50];
 			$http.get(url).success(function(respData, status, headers, config){
