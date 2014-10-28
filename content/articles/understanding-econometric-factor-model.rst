@@ -26,7 +26,9 @@ as follows.
 - The *value/growth* (or HML - High book-to-value Minus Low) is meant to identify the
   value or growth aspect of a stock.
   
-As a use case, let us try a few examples and see if it makes sense.
+As a use case, let us try a few examples and see if it makes sense. The following 
+table is based on the factor model run using 5 years of historical returns as of
+09-30-2014.
 
 .. raw:: html
 
