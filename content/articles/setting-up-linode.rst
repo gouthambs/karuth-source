@@ -30,7 +30,19 @@ Linode Basics
     hostname -F /etc/hostname
 
   Try ``hostname`` on the command line to see the hostname printed correctly.
+  
+- Add to /etc/hosts. In your *desktop*, associate the linode IP with a custom servername of
+  your liking. Edit /etc/hosts to look like::
+  
+    
+    127.0.0.1	localhost
+    127.0.1.1	G-ubuntu
+    111.11.11.1 ServerName
+    
+
 
 Python Setup
 ------------
+
+- 
 
