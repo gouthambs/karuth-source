@@ -119,7 +119,18 @@ Linode Basics
     target     prot opt source               destination
     ACCEPT     all  --  anywhere             anywhere 
 
+  Now to ensure that the firewall is going to be up and running every time you reboot your
+  Linode, edit ``/etc/network/if-pre-up.d/firewall`` as ``sudo`` to add::
 
+    #!/bin/sh
+    /sbin/iptables-restore < /etc/iptables.firewall.rules
+    
+  Once you have saved these edits, make this file executable using::
+  
+    sudo chmod +x /etc/network/if-pre-up.d/firewall
+  
+  This should secure your server. If you want to make sure your firewall is up and running,
+  reboot the server and check what you get when you type ``sudo iptables -L``.
 
 Python Setup
 ------------
