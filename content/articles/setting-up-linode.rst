@@ -147,15 +147,15 @@ Securing Linode
       
       sudo apt-get install fail2ban
     
-  Optionally, you can override the default Fail2Ban configuration by creating 
-  a new ``jail.local`` file. Enter the following command to create the file::
+  - Optionally, you can override the default Fail2Ban configuration by creating 
+    a new ``jail.local`` file. Enter the following command to create the file::
     
-    sudo nano /etc/fail2ban/jail.local
+      sudo nano /etc/fail2ban/jail.local
     
-  To learn more about Fail2Ban configuration options, see this article on the Fail2Ban_ website.
-  Fail2Ban is now installed and running on your Linode. It will monitor your log files for failed 
-  login attempts. After an IP address has exceeded the maximum number of authentication attempts, 
-  it will be blocked at the network level and the event will be logged in ``/var/log/fail2ban.log``.
+  - To learn more about Fail2Ban configuration options, see this article on the Fail2Ban_ website.
+    Fail2Ban is now installed and running on your Linode. It will monitor your log files for failed 
+    login attempts. After an IP address has exceeded the maximum number of authentication attempts, 
+    it will be blocked at the network level and the event will be logged in ``/var/log/fail2ban.log``.
 
 
 Python Setup
