@@ -16,7 +16,7 @@ Recently I stumbled into a problem with this approach. My file was big, in the 1
 running a 32-bit version of python, and I started getting ``MemoryError``. This happens because
 ``pandas`` and ``numpy`` would need to allocate contiguous memory blocks, and 32-bit system
 would have a cap at 2GB. Additionally processing a huge file took some time (more than my impatience
-could tolerate). The approach I took to solve this problem is::
+could tolerate). The approach I took to solve this problem is:
 
 - Read the large input file in smaller chunks so it wouldn't run into ``MemoryError``
 - Use multi-processing to process the input file in parallel to speed up processing
