@@ -57,6 +57,7 @@ snippet from above.
 .. code:: python
 	
 	import pandas as pd
+	import multiprocessing as mp
 	
 	LARGE_FILE = "D:\\my_large_file.txt"
 	CHUNKSIZE = 100000 # processing 100,000 rows at a time
