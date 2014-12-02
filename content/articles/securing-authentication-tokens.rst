@@ -9,7 +9,7 @@ Securing Authentication Tokens
  that can be used with Flask-Login.
 :keywords: Flask, Python, Programming, Analytics, Authentication, Flask-Login, Flask Login, itsdangerous
 
-The article `Minimal Flask Login Example <|filename|Minimal Flask-Login Example.rst>`_ provided an introduction to token 
+The article `Minimal Flask Login Example <|filename|minimal_flask_login_example.rst>`_ provided an introduction to token 
 based authentication using the Flask-Login extension for the Flask web framework. The focus of that article was to
 highlight the crux of authentication logic. One glaring omission was that the token itself was nothing but
 the username and password passed as clear text. This clearly will not work! 
@@ -24,7 +24,7 @@ The high level control flow involving token based authentication is as follows:
 - if the token is valid, then the server responds with an access to the secured page; should the token be invalid, then
   the access to secured page is denied.
   
-In the `Minimal Flask Login Example <|filename|Minimal Flask-Login Example.rst>`_, we skipped the serialization part
+In the `Minimal Flask Login Example <|filename|minimal_flask_login_example.rst>`_, we skipped the serialization part
 for simplicity. A more rigorous way of doing this would be to use ``JSONWebSignatureSerializer`` in the 
 ``itsdangerous`` package to serialize the authentication credentials.
 
