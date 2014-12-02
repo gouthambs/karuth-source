@@ -31,6 +31,7 @@ Example Code
 Here is the full source code that we are about to discuss:
 
 .. raw:: html
+
  <script src="https://gist.github.com/gouthambs/0a509faf231cff3cdec7.js"></script>
 
 
