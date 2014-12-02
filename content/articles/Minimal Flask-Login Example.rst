@@ -8,7 +8,7 @@ Minimal Flask-Login Example
 :author: Gouthaman Balaraman
 :description: Flask-Login is a Flask extension that provides a framework for handling user authentication. 
  This post will give you a basic tutorial of the Flask-Login mechanism for token based authentication.
-:keywords: Flask, Python, Programming, Analytics, Authentication
+:keywords: Flask, Python, Programming, Analytics, Authentication, Flask-Login, Flask Login
 
 
 The goal of this post is to give a very basic introduction to token based authentication using Flask-Login. 
