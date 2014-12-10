@@ -9,17 +9,29 @@ MySQL Cheatsheet
 
 Here are some notes and commands on MySQL administration 
 
+- Create a database::
+
+    CREATE DATABASE mydatabase;
+    
+- Creating a user for the database::
+
+    CREATE USER 'testuser'@localhost IDENTIFIED BY 'password';
+    
+- Granting ``testuser`` all privileges on a table::
+
+    GRANT ALL PRIVILEGES ON mydatabase.* TO 'testuser'@localhost;
+
 - Show a list of databases::
 
-    show databases;
+    SHOW DATABASES;
   
 - Pick a database to use::
 
-    use mydatabase;
+    USE mydatabase;
     
 - Show a list of tables after selecting a database::
 
-    show tables;
+    SHOW TABLES;
     
 - Updating a column with a constant value::
 
@@ -33,5 +45,14 @@ Here are some notes and commands on MySQL administration
 
     ALTER TABLE table1 AUTO_INCREMENT=1;
     
+- Disabling safe update mode, and turning back on::
+
+    SET SQL_SAFE_UPDATES = 0;
+    DELETE FROM table1 WHERE query_id='1';
+    SET SQL_SAFE_UPDATES = 1;
+    
+  Use the above with caution.
+  
+
 
   
