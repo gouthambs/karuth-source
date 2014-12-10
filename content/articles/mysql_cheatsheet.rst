@@ -17,7 +17,7 @@ Here are some notes and commands on MySQL administration
 
     use mydatabase;
     
-- Show a list of tables after selecting a database;
+- Show a list of tables after selecting a database::
 
     show tables;
     
