@@ -53,6 +53,12 @@ Here are some notes and commands on MySQL administration
     
   Use the above with caution.
   
+- Counting duplicates in a column::
+
+    SELECT query_id, COUNT(*) c FROM table1 GROUP BY query_id HAVING c > 1;
+    
+  This would count all duplicates in query_id and list the count for each. You can drop the ``HAVING c > 1`` part
+  if you just want to get a count on a certain column.
 
 
   
