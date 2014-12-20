@@ -59,6 +59,16 @@ Here are some notes and commands on MySQL administration
     
   This would count all duplicates in query_id and list the count for each. You can drop the ``HAVING c > 1`` part
   if you just want to get a count on a certain column.
+  
+- Getting size occupied by a database named ``mydatabase`` listed for each table::
+
+    SELECT table_name AS "Tables", 
+    round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB" 
+    FROM information_schema.TABLES 
+    WHERE table_schema = "mydatabase"
+    ORDER BY (data_length + index_length) DESC;
+    
+    
 
 
   
