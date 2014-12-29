@@ -61,14 +61,14 @@ over to production smoothly. Let me explain the structure briefly before we dive
 - ``myapp/subapp1`` is a sub-package under the ``myapp`` packages. I recommend using sub-packages to organize
   your web application with the help of ``Blueprints``. 
   
-	- ``myapp/subapp1/__init__.py`` is the place to create the ``Blueprint`` definition and other initializations 
-	  corresponding to your sub-package.
-	- ``myapp/subapp1/models.py`` is the place to define the SQLAlchemy models.
-	- ``myapp/subapp1/views.py`` is the place to define the routes that the submodule will provide
-	- ``myapp/subapp1/viewmodel.py`` is the bridge between model and view. Use this file to create functions 
-	  to wrap your database queries using models defined in ``models.py that ``views.py`` can call. 
-	  In the future, should you want to add caching support, you can directly add here and have the benefit of 
-	  caching.
+  - ``myapp/subapp1/__init__.py`` is the place to create the ``Blueprint`` definition and other initializations 
+    corresponding to your sub-package.
+  - ``myapp/subapp1/models.py`` is the place to define the SQLAlchemy models.
+  - ``myapp/subapp1/views.py`` is the place to define the routes that the submodule will provide
+  - ``myapp/subapp1/viewmodel.py`` is the bridge between model and view. Use this file to create functions 
+    to wrap your database queries using models defined in ``models.py that ``views.py`` can call. 
+    In the future, should you want to add caching support, you can directly add here and have the benefit of 
+    caching.
 	  
   
 		
