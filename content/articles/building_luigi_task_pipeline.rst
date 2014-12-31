@@ -48,3 +48,25 @@ When the script is executed, you should see an output that looks like this::
   Hello World!
   
 There you go! You have learnt a basic example.
+
+Linked Task Example
+===================
+
+The above example was a good starter example. Though we did not really do much in terms of building a pipeline.
+Lets modify the above code a little bit, so we can build a pipeline.
+
+.. code:: html
+
+  <script src="https://gist.github.com/gouthambs/8740bf4ff5e8269fd56a.js"></script>
+  
+This example is built on top of the "Hello World" example from above. The ``SimpleTask`` outputs
+the text "Hello World!". The ``DecoratedTask`` takes this output from ``SimpleTask`` and prefixes
+with the word "Decorated". 
+
+In this example, we have modified the output target for the ``SimpleTask`` to a ``luigi.LocalTarget``.
+If you are running on a Linux/Unix based system, you might want to modify this path. So the 
+``SimpleTask`` writes to the file system, and the ``DecoratedTask`` reads from the file 
+and prints the modified output.
+
+I use the ``StreamTarget`` here just as a way to see the results on the console. Though you should
+not use this ``StreamTarget`` for any production code.
