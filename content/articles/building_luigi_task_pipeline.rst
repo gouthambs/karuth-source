@@ -55,7 +55,7 @@ Linked Task Example
 The above example was a good starter example. Though we did not really do much in terms of building a pipeline.
 Lets modify the above code a little bit, so we can build a pipeline.
 
-.. code:: html
+.. raw:: html
 
   <script src="https://gist.github.com/gouthambs/8740bf4ff5e8269fd56a.js"></script>
   
