@@ -17,11 +17,10 @@ an example.
 Luigi Basics
 ============
 
-In Luigi, a data pipeline is built by creating ``Task`` objects. For every target, you can define
+In Luigi, a data pipeline is built by defining ``Task`` instances. For every ``Tas``, you can define
 its dependency by specifying the ``requires`` method for the ``Task``. Every ``Task`` can define 
-an ``output`` method to specify where the results of the ``Task`` should go. Lets look at a
-simple example to get our feet wet, and gradually build towards complex cases.
-
+an ``output`` method to specify the ``Target`` where the results of the ``Task`` should go. Lets look at a
+simple example to get our feet wet, and gradually build complex cases.
 
 Hello World!
 ============
