@@ -83,21 +83,21 @@ The output for the above example would look like::
   INFO: Running Worker with 1 processes
   DEBUG: Asking scheduler for work...
   DEBUG: Pending tasks: 2
-  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) running   SimpleTask()
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=myuser, pid=30648) running   SimpleTask()
   SimpleTask: Hello World!
-  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) done      SimpleTask()
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=v, pid=30648) done      SimpleTask()
   DEBUG: 1 running tasks, waiting for next task to finish
   DEBUG: Asking scheduler for work...
   DEBUG: Pending tasks: 1
-  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) running   DecoratedTask()
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=myuser, pid=30648) running   DecoratedTask()
   DecoratedTask: Decorated Hello World!
   
-  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) done      DecoratedTask()
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=myuser, pid=30648) done      DecoratedTask()
   DEBUG: 1 running tasks, waiting for next task to finish
   DEBUG: Asking scheduler for work...
   INFO: Done
   INFO: There are no more tasks to run at this time
-  INFO: Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) was stopped. Shutting down Keep-Alive thread
+  INFO: Worker Worker(salt=907129510, host=G-ubuntu, username=myuser, pid=30648) was stopped. Shutting down Keep-Alive thread
 
 Conclusion
 ==========
