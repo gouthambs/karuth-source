@@ -30,7 +30,7 @@ Hello World!
 
   <script src="https://gist.github.com/gouthambs/873ebce21062914f038d.js"></script>
   
-This example is rather self-explanatory. I have created a ``StreamHandler`` class as 
+This example is rather self-explanatory. I use the ``MockFile`` class as 
 the ``Target`` just so that I can print to console. One can instead use ``luigi.LocalFileTarget(filename)``
 to use the file system as the target. The ``main_task_cls`` specifies ``SimpleTask`` as the task
 to run. The actual processing part of the task is encapsulated in the ``run`` method of the ``SimpleTask``
@@ -38,14 +38,21 @@ class.
 
 When the script is executed, you should see an output that looks like this::
 
+
   DEBUG: Checking if SimpleTask() is complete
   INFO: Scheduled SimpleTask() (PENDING)
   INFO: Done scheduling tasks
   INFO: Running Worker with 1 processes
   DEBUG: Asking scheduler for work...
   DEBUG: Pending tasks: 1
-  INFO: [pid 13776] Worker Worker(salt=1212123, host=YourHost, username=yourUserName, pid=1111) running   SimpleTask()
-  Hello World!
+  INFO: [pid 30338] Worker Worker(salt=329921834, host=G-ubuntu, username=myuser, pid=30338) running   SimpleTask()
+  SimpleTask: Hello World!
+  INFO: [pid 30338] Worker Worker(salt=329921834, host=G-ubuntu, username=myuser, pid=30338) done      SimpleTask()
+  DEBUG: 1 running tasks, waiting for next task to finish
+  DEBUG: Asking scheduler for work...
+  INFO: Done
+  INFO: There are no more tasks to run at this time
+  INFO: Worker Worker(salt=329921834, host=G-ubuntu, username=myuser, pid=30338) was stopped. Shutting down Keep-Alive thread
   
 There you go! You have learnt a basic example.
 
@@ -63,10 +70,36 @@ This example is built on top of the "Hello World" example from above. The ``Simp
 the text "Hello World!". The ``DecoratedTask`` takes this output from ``SimpleTask`` and prefixes
 with the word "Decorated". 
 
-In this example, we have modified the output target for the ``SimpleTask`` to a ``luigi.LocalTarget``.
-If you are running on a Linux/Unix based system, you might want to modify this path. So the 
-``SimpleTask`` writes to the file system, and the ``DecoratedTask`` reads from the file 
-and prints the modified output.
+I use the ``MockFile`` here just as a way to see the results on the console. This is 
+usually a good testing tool, though I am not sure if it is production ready approach.
 
-I use the ``StreamTarget`` here just as a way to see the results on the console. Though you should
-not use this ``StreamTarget`` for any production code.
+The output for the above example would look like::
+
+  DEBUG: Checking if DecoratedTask() is complete
+  INFO: Scheduled DecoratedTask() (PENDING)
+  DEBUG: Checking if SimpleTask() is complete
+  INFO: Scheduled SimpleTask() (PENDING)
+  INFO: Done scheduling tasks
+  INFO: Running Worker with 1 processes
+  DEBUG: Asking scheduler for work...
+  DEBUG: Pending tasks: 2
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) running   SimpleTask()
+  SimpleTask: Hello World!
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) done      SimpleTask()
+  DEBUG: 1 running tasks, waiting for next task to finish
+  DEBUG: Asking scheduler for work...
+  DEBUG: Pending tasks: 1
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) running   DecoratedTask()
+  DecoratedTask: Decorated Hello World!
+  
+  INFO: [pid 30648] Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) done      DecoratedTask()
+  DEBUG: 1 running tasks, waiting for next task to finish
+  DEBUG: Asking scheduler for work...
+  INFO: Done
+  INFO: There are no more tasks to run at this time
+  INFO: Worker Worker(salt=907129510, host=G-ubuntu, username=gouthaman, pid=30648) was stopped. Shutting down Keep-Alive thread
+
+Conclusion
+==========
+
+Here we learnt a really basic example that gives you basic idea on building Luigi based pipelines.
