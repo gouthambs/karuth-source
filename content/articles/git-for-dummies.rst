@@ -95,4 +95,16 @@ to go through three steps:
     
   Here we are assuming that you want to push your changes to the master.
 
+Branching and Merging
+---------------------
+
+Say you have checked out a repository, and you want to work on a feature. Its a good idea to create a feature
+branch, to work on your modifications. 
+
+- To create a branch::
+
+    git checkout -b myAwesomeFeature
+    Switched to a new branch "myAwesomeFeature"
+    
+
 
