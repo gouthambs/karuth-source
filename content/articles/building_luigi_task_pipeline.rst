@@ -10,14 +10,17 @@ Building Task Pipelines Using Luigi
 
 It is incredibly easy to write a script to process some data in python. But if you 
 have a lot of tasks that depend on each other, and you need to create a robust work 
-flow, then thinking in terms of a data pipeline is useful. Luigi is a framework for
-building data pipelines, and we will start with a simple "Hello World!" equivalent of
-an example. 
+flow, then thinking in terms of a data pipeline is useful. 
+
+Luigi is a framework for building data pipelines, and managing workflows. The onus of 
+setting up each unit of work is on you as the developer. Luigi taks care of resolving dependencies, 
+manages the overall workflow, and most importantly handles failures. As a bonus Luigi provides 
+a rather nice visualization tool and a command line interface.
 
 Luigi Basics
 ============
 
-In Luigi, a data pipeline is built by defining ``Task`` instances. For every ``Tas``, you can define
+In Luigi, a data pipeline is built by defining ``Task`` instances. For every ``Task``, you can define
 its dependency by specifying the ``requires`` method for the ``Task``. Every ``Task`` can define 
 an ``output`` method to specify the ``Target`` where the results of the ``Task`` should go. Lets look at a
 simple example to get our feet wet, and gradually build complex cases.
@@ -101,4 +104,4 @@ The output for the above example would look like::
 Conclusion
 ==========
 
-Here we learnt a really basic example that gives you basic idea on building Luigi based pipelines.
+Here we learnt a really basic example that should give you some sense of building Luigi based task pipelines.
