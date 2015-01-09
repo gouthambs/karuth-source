@@ -69,6 +69,14 @@ to work on an issue, then the *origin* would refer to the user's fork of the *up
 - **Checkout code**: To checkout the master try::
   
     git checkout master
+    
+- **Syncing origin with upstream**: If you have forked a project and have been working on your fork for a while,
+  what will happen is that the project that you originally forked from has advanced. Then you would need
+  to sync your fork with upstream to ensure that your changes are still valid. This can be done by::
+  
+    git merge upstream/master
+    
+  Here I am syncing the ``upstream/master`` with the local checked out project. 
   
 Committing Code Changes
 -----------------------
@@ -101,10 +109,25 @@ Branching and Merging
 Say you have checked out a repository, and you want to work on a feature. Its a good idea to create a feature
 branch, to work on your modifications. 
 
-- To create a branch::
+- **To create a branch**::
 
     git checkout -b myAwesomeFeature
     Switched to a new branch "myAwesomeFeature"
     
+- **Deleting branches**: To delete a local branch::
+    
+    git branch -d myAwesomeFeature
 
+- **List branches**: To list local branches::
+
+    git branch
+    
+  To list remote branches only::
+
+    git branch -r
+    
+  To list all branches::
+
+    git branch -a
+    
 
