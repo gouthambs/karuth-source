@@ -1,5 +1,5 @@
-MySQL Cheatsheet
-################
+MySQL Cheat Sheet
+#################
 
 :date: 2014-12-09
 :tags: programming, linux, database, mysql
