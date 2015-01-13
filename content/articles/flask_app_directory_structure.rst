@@ -16,7 +16,7 @@ This post is a summary of what I learnt perusing a lot of websites. My goal here
 Directory Structure
 ===================
 
-I want to build a website based on the Flask framework for python. I recommend you organize you ``app`` as::
+If you want to build a website based on the Flask framework for python. I recommend you organize you ``app`` as::
 
 	~/AppHome
 		|-- run.py
@@ -69,11 +69,27 @@ over to production smoothly. Let me explain the structure briefly before we dive
     to wrap your database queries using models defined in ``models.py that ``views.py`` can call. 
     In the future, should you want to add caching support, you can directly add here and have the benefit of 
     caching.
+  - ``templates`` folder with its sub structure contains the Flask ``html`` templates. By mirroring the template
+    sub-folders similar to the app sub-modules, it would be easier to maintain. 
+  - ``static`` folder contains all the static resources. By isolating this folder, we could use other servers
+    such as ``nginx`` to serve static content.
+- ``setup.py`` script can contain the setup script to bundle your app.
+- ``MANIFEST.in`` typically contains resources about your package, other resources that you wish to 
+  package.
+- ``Requirements.txt`` is the place to put all your package dependencies. You can easily install all dependencies
+  using ``pip``.
+- ``env`` can contain your virtual environment for development.
+- ``manage.py`` is the place to put any kinds of ``Flask`` related scripts, such as database migrations. 
+- ``migrations`` folder containing  configuration and scripts associated with database migration.
+- ``etl`` is a folder to put scripts related to ETL tasks. This is something that you could move to a
+  different location. Though sometimes it is convenient to group them if you do need to share code with your app.
+- ``fabfile.py`` to automate local and server side tasks that need to be run often.
+
+    
 	  
   
 		
-		
-				
+... to be continued.
 
 
 
