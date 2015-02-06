@@ -3,7 +3,7 @@ Using SQLAlchemy in Luigi Workflow Pipeline
 
 :date: 2014-12-31
 :tags: Programming, Python, Luigi, SQLAlchemy
-:slug: building-luigi-task-pipeline
+:slug: sqlalchemy-luigi-workflow-pipeline
 :author: Gouthaman Balaraman
 :description: This is a very basic example on using Luigi sqla contrib module in a task pipeline while using luigi
 :keywords: Python, Programming, Luigi, Task Pipeline, SQLAlchemy, sqla 
