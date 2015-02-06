@@ -1,7 +1,7 @@
 Using SQLAlchemy in Luigi Workflow Pipeline
 ###########################################
 
-:date: 2014-12-31
+:date: 2015-02-05
 :tags: Programming, Python, Luigi, SQLAlchemy
 :slug: sqlalchemy-luigi-workflow-pipeline
 :author: Gouthaman Balaraman
