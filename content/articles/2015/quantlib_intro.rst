@@ -90,11 +90,55 @@ The two arguments following the ``calendar`` in the ``Schedule`` constructor are
 Here we chose the convention to be the day following holidays. That is why we see that holidays are excluded
 in the list of dates.
 
+Interest Rate
+=============
+
+The ``InterestRate`` class can be used to store the interest rate with the compounding type, day count and
+the frequency of compounding.
+
+.. code:: python
+
+    >>> annualRate = 0.05
+    >>> dayCount = ql.ActualActual()
+    >>> compoundType = ql.Compounded
+    >>> frequency = ql.Annual
+    >>> interestRate = ql.InterestRate(annualRate, dayCount, compoundType, frequency)
+
+Here we have created an interest rate of 5.0% compounded annually, using ActualActual daycount convention.
+A given interest rate can be converted into other types using the ``equivalentRate`` method as :
+
+.. code:: python
+
+    >>> newFrequency = ql.Semiannual
+    >>> effectiveRate = interestRate.equivalentRate(compoundType, newFrequency, 1)
+    >>> effectiveRate.rate()
+    0.04939015319191986
+
+
+Here we have converted into a semi-annual compounding type. A 4.939% of semi-annual compounding
+is equivalent to 5.0% annual compounding. This should mean, that both should give identical
+discount factors. Lets check that:
+
+.. code:: python
+
+    >>> interestRate.discountFactor(1.0)
+    0.9523809523809523
+    >>> effectiveRate.discountFactor(1.0)
+    0.9523809523809521
+
+So this means that pricing bonds using either interest rate convention should give the same
+net present value (barring some precision).
+
+
+
+
 Conclusion
 ==========
 
-In this post we looked at the basics of QuantLib, more specifically the time module. We learnt to
-create ``Date`` objects and ``Schedules``.
+In this post we looked at the basics of QuantLib:
+
+- We learnt how to use ``Date`` and ``Schedule`` classes from the ``time`` sub-module
+- we learnt how to use the ``InterestRate`` class
 
 
 
