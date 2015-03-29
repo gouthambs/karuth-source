@@ -1,5 +1,5 @@
-QuantLib Basics
-###############
+Introduction to QuantLib
+########################
 
 :date: 2015-03-24
 :tags: python, finance, quantlib
@@ -94,7 +94,8 @@ Interest Rate
 =============
 
 The ``InterestRate`` class can be used to store the interest rate with the compounding type, day count and
-the frequency of compounding.
+the frequency of compounding. Below we show how to create an interest rate of 5.0% compounded annually,
+using Actual/Actual day count convention.
 
 .. code:: python
 
@@ -104,7 +105,31 @@ the frequency of compounding.
     >>> frequency = ql.Annual
     >>> interestRate = ql.InterestRate(annualRate, dayCount, compoundType, frequency)
 
-Here we have created an interest rate of 5.0% compounded annually, using ActualActual daycount convention.
+
+Lets say if you invest a dollar at the interest rate described by ``interestRate``, the
+``compoundFactor`` method gives you how much your investment will be worth after ``t`` years.
+Below we show that the value returned by ``compoundFactor`` for 2 years agrees with
+the expected compounding formula.
+
+ .. code:: python
+
+    >>> interestRate.compoundFactor(2.0)
+    1.1025
+    >>> (1.0 + annualRate)*(1.0 + annualRate)  # Check the above calculation
+    1.1025
+
+
+The ``discountFactor`` method returns the reciprocal of the ``compoundFactor`` method.
+The discount factor is useful while calculating the present value of future cashflows.
+
+.. code:: python
+
+    >>> interestRate.discountFactor(2.0)
+    0.9070294784580498
+    >>> 1.0 / interestRate.compoundFactor(2.0)
+    0.9070294784580498
+
+
 A given interest rate can be converted into other types using the ``equivalentRate`` method as :
 
 .. code:: python
@@ -113,6 +138,12 @@ A given interest rate can be converted into other types using the ``equivalentRa
     >>> effectiveRate = interestRate.equivalentRate(compoundType, newFrequency, 1)
     >>> effectiveRate.rate()
     0.04939015319191986
+
+The ``InterestRate`` class also has an ``impliedRate`` method. The ``impliedRate`` method
+takes compound factor to return the implied rate. The ``impliedRate`` method
+is a static method in the ``InterestRate`` class and can be used without an
+instance of ``InterestRate``. Internally the ``equivalentRate`` method invokes
+the ``impliedRate`` method in its calculations.
 
 
 Here we have converted into a semi-annual compounding type. A 4.939% of semi-annual compounding
