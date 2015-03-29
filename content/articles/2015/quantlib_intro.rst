@@ -105,19 +105,17 @@ using Actual/Actual day count convention.
     >>> frequency = ql.Annual
     >>> interestRate = ql.InterestRate(annualRate, dayCount, compoundType, frequency)
 
-
 Lets say if you invest a dollar at the interest rate described by ``interestRate``, the
 ``compoundFactor`` method gives you how much your investment will be worth after ``t`` years.
 Below we show that the value returned by ``compoundFactor`` for 2 years agrees with
 the expected compounding formula.
 
- .. code:: python
+.. code:: python
 
     >>> interestRate.compoundFactor(2.0)
     1.1025
     >>> (1.0 + annualRate)*(1.0 + annualRate)  # Check the above calculation
     1.1025
-
 
 The ``discountFactor`` method returns the reciprocal of the ``compoundFactor`` method.
 The discount factor is useful while calculating the present value of future cashflows.
