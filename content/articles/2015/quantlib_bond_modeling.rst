@@ -46,9 +46,9 @@ Now lets construct the fixed rate bond.
 
 .. code:: python
 
-    >>> issueDate = ql.Date(15, 7, 2015)
+    >>> issueDate = ql.Date(15, 1, 2015)
     >>> maturityDate = ql.Date(15, 1, 2016)
-    >>> tenor = ql.Period(ql.Semiannual)
+    >>> tenor = ql.Period(ql.Annual)
     >>> calendar = ql.UnitedStates()
     >>> bussinessConvention = ql.Unadjusted
     >>> dateGeneration = ql.DateGeneration.Backward
@@ -56,13 +56,13 @@ Now lets construct the fixed rate bond.
     >>> schedule = ql.Schedule (issueDate, maturityDate, tenor, calendar, bussinessConvention,
                                 bussinessConvention , dateGeneration, monthEnd)
     >>> list(schedule)
-    [Date(15,7,2015), Date(15,1,2016)]
+    [Date(15, 1, 12015), Date(15,7,2015), Date(15,1,2016)]
 
 
     # Now lets build the coupon
     >>> dayCount = ql.Thirty360()
-    >>> couponRate = ql.InterestRate(.06, dayCount, ql.Compounded, ql.Annual)
-    >>> coupons = [couponRate, couponRate]
+    >>> couponRate = .06
+    >>> coupons = [couponRate]
 
     # Now lets construct the FixedRateBond
     >>> settlementDays = 0
