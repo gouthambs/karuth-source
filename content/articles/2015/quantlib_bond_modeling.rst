@@ -3,7 +3,7 @@ Modeling Fixed Rate Bonds Using QuantLib
 
 :date: 2015-03-30
 :tags: python, finance, quantlib
-:slug: quantlib-term-structure
+:slug: quantlib-bond-modeling
 :description: This post will walk through an example of modeling fixed rate bonds using QuantLib.
 
 
