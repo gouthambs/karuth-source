@@ -48,7 +48,7 @@ Now lets construct the fixed rate bond.
 
     >>> issueDate = ql.Date(15, 1, 2015)
     >>> maturityDate = ql.Date(15, 1, 2016)
-    >>> tenor = ql.Period(ql.Annual)
+    >>> tenor = ql.Period(ql.Semiannual)
     >>> calendar = ql.UnitedStates()
     >>> bussinessConvention = ql.Unadjusted
     >>> dateGeneration = ql.DateGeneration.Backward
@@ -69,8 +69,15 @@ Now lets construct the fixed rate bond.
     >>> faceValue = 100
     >>> fixedRateBond = ql.FixedRateBond(settlementDays, faceValue, schedule, coupons, dayCount)
 
+    # create a bond engine with the term structure as input;
+    # set the bond to use this bond engine
+    >>> bondEngine = ql.DiscountingBondEngine(spotCurveHandle)
+    >>> fixedRateBond.setPricingEngine(bondEngine)
+
     # Finally the price
     >>> fixedRateBond.NPV()
     105.27653992490683
 
 Voila!
+
+Download the `modeling bonds ipython notebook </extra/notebooks/modeling-bonds.ipynb>`_.
