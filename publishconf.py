@@ -20,7 +20,7 @@ STATIC_PATHS = [
     ]
 
 PLUGIN_PATHS = ['./pelican-plugins/']
-PLUGINS = ['related_posts']
+PLUGINS = ['related_posts', 'share_post']
 RELATED_POSTS_MAX = 5
 
 DEFAULT_LANG = u'en'

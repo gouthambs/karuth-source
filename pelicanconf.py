@@ -20,7 +20,7 @@ STATIC_PATHS = [
 
 #plugin parameters
 PLUGIN_PATHS = ['./pelican-plugins/']
-PLUGINS = ['related_posts']
+PLUGINS = ['related_posts', 'share_post']
 
 RELATED_POSTS_MAX = 5
 
