@@ -3,6 +3,7 @@ Sending MSMQ Messages Using Python
 :date: 2014-02-21
 :tags: python, programming
 :description: Send MSMQ messages using python
+:slug: sending-msmq-messages-python
 
 MSMQ is a message queue in the Windows environment, very much like 
 RabbitMQ. MSMQ can be used as a task queue or for communicating

@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Gouthaman Balaraman'
 #SITEURL = '/'
-LOCAL_BOOTSTRAP  = True
+LOCAL_BOOTSTRAP = True
 ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
 
@@ -47,7 +47,7 @@ TWITTER_HANDLE = 'gsbala'
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+RELATIVE_URLS = False
 #LOCAL_BOOTSTRAP = True
 
 READERS = {'html': None}

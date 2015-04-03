@@ -10,7 +10,7 @@ If you have a web application running in Python, there can be a need for the log
 not interfere with the performance. Default file based loggers can lead to a slow down
 because of the constand disk writes. An alternate solution that can be quite handy is
 logging into a message based logger, such as MSMQ. This post is built on my earlier post
-`Sending MSMQ Messages Using Python <|filename|sending-msmq-messages-python.rst>`_, where
+`Sending MSMQ Messages Using Python </blog/sending-msmq-messages-python.html>`_, where
 I discuss how to setup, send and receive messages using MSMQ.
 
 Here I will show how one can use the MSMQ to build a custom handler, that can be used
@@ -72,5 +72,5 @@ you can incorporate it into your workflow as shown below:
     lgr.info("Test Message")
 	
 And that completes the MSMQ logger using python. Now all your logs will be pushed to the KaruthQueue
-that we created. You can use the example shown `here <|filename|sending-msmq-messages-python.rst>`_ to read the messages in a seperate application
+that we created. You can use the example shown `here </blog/sending-msmq-messages-python.rst>`_ to read the messages in a seperate application
 and store any way you chose, files, database etc.

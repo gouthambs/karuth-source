@@ -8,8 +8,8 @@ Understanding the Econometric Factor Model
 :description: Here I explain how to make sense of the econometric factor model widget.
 :keywords: finance, factor model
 
-The post explains the `Econometric Factor Model <|filename|./widgets/econometric-factor-model.rst>`_ widget
-that I have built. The factors used in the econometric factor model are: *unemployment*, 
+The post explains the `Econometric Factor Model </blog/econometric-factor-model.html>`_
+widget that I have built. The factors used in the econometric factor model are: *unemployment*,
 *consumer sentiment*, *market*, *size* and *value/growth*. A brief explanation of the factors are
 as follows. 
 

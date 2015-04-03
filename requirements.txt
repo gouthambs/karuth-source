@@ -1,4 +1,4 @@
-pelican
+pelican>=3.5.0
 Markdown
 fabric
 beautifulsoup4

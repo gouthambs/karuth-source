@@ -16,7 +16,7 @@ Have you ever wondered how to calculate the Beta value that is shown in
 GoogleFinance_ or YahooFinance_ and what does it mean from an investment perspective? 
 This article will give you an introduction to the concept and demonstrate how
 you can calculate various time series measures for a stock using python. The 
-`Modern Portfolio Theory Statistics <|filename|./widgets/modern-portfolio-theory-statistics.rst>`_
+`Modern Portfolio Theory Statistics </blog/modern-portfolio-theory-statistics.rst>`_
 page shows calculated betas, alpha, etc for a few thousand stocks.
 
 Beta, Alpha and R-squared

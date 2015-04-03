@@ -124,7 +124,7 @@ This article explained how to write token based authentication using ``Flask-Log
 of this article was explaining the basic workings of ``flask-login`` without having to setup database or
 even the token generation. Once the basic plumbing is setup, one can extend this example in two ways: 
 
-- `Securing Authentication Tokens <|filename|securing-authentication-tokens.rst>`_ 
+- `Securing Authentication Tokens </blog/securing-authentication-tokens.rst>`_
 - have a database to store and retrive user credentials.
 
 

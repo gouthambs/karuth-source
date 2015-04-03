@@ -13,13 +13,7 @@ Option Model Handbook, Part I: Introduction to Option Models
 
 This is a series of articles pertaining to option model pricing. Here I will
 explain the various concepts such as risk-neutral valuation, Black-Scholes formula,
-and binomial tree option pricing models. 
-
-**Contents:**
-
-I. `Introduction to Option Models <|filename|option_models.rst>`_
-II. `Introduction to Binomial Trees <|filename|intro_binomial_trees.rst>`_
-
+and binomial tree option pricing models.
 
 Introduction to Option Models
 =============================

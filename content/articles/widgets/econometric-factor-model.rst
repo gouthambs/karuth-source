@@ -9,7 +9,7 @@ Econometric Factor Model
 :keywords: finance, factor model
 
 
-Please refer to `Understanding Econometric Factor Model <|filename|./../understanding-econometric-factor-model.rst>`_ 
+Please refer to `Understanding Econometric Factor Model </blog/understanding-econometric-factor-model.html>`_
 for details.
 
     
