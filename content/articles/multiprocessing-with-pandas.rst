@@ -74,6 +74,7 @@ snippet from above.
 		for df in reader:
 			# process each data frame
 			f = pool.apply_async(process_frame,[df])
+			funclist.append(f)
 		
 		result = 0
 		for f in funclist:
