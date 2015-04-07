@@ -50,6 +50,10 @@ DEFAULT_PAGINATION = 10
 RELATIVE_URLS = False
 #LOCAL_BOOTSTRAP = True
 
+FEED_RSS = 'feeds/all.rss.xml'
+CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
+
+
 READERS = {'html': None}
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
