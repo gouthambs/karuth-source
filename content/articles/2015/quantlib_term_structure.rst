@@ -8,7 +8,7 @@ An Introduction to Interest Rate Term Structure in QuantLib
 
 Term structure is pivotal to pricing securities. One would need a ``YieldTermStructure`` object
 created in ``QuantLib`` to use with pricing engines. In an earlier post on
-`modeling bonds using QuantLib <blog/quantlib-bond-modeling.html>`_ we discussed how to use
+`modeling bonds using QuantLib </blog/quantlib-bond-modeling.html>`_ we discussed how to use
 spot rates directly with bond pricing engine. Here in this post we will show how to
 bootstrap yield curve using ``QuantLib``.
 
