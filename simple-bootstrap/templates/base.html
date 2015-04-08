@@ -130,19 +130,18 @@
                 </div>
             </div>
             <footer id="contentinfo" class="footer">
-                    <address id="about" class="vcard body">
+                <address id="about" class="vcard body">
                     &copy; <a href="{{SITEURL}}">{{AUTHOR}}</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
-                      <div class="pull-right">
-                    	 {% if FEED_ALL_ATOM %}
-			<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom</a>
-			{% endif %}
-			&nbsp 
-			{% if FEED_RSS %}
-			<a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}">RSS</a>
-			{% endif %}
-			
-		       </div>
-                    </address><!-- /#about -->
+                    <div class="pull-right">
+                    {% if FEED_ALL_ATOM %}
+			            <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom</a>
+			        {% endif %}
+			        &nbsp
+			        {% if FEED_RSS %}
+			            <a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}">RSS</a>
+			        {% endif %}
+		            </div>
+                </address><!-- /#about -->
             </footer><!-- /#contentinfo -->
         </div><!-- container -->
     </body>
