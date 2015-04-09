@@ -172,6 +172,9 @@ Maturity        Spots
 10.0 		    8.072
 ========        ==========
 
+Once we have the spots, the zero coupon curve can be directly constructed the next time as show in the 
+`bond pricing example <quantlib-bond-modeling.html>`_. The ``yieldcurve.dates()`` and 
+``yieldcuve.zeroRate(...)`` methods would provide for the necessary rates as shown above.
 
 Conclusion
 ==========
