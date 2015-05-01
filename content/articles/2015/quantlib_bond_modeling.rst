@@ -5,7 +5,7 @@ Modeling Fixed Rate Bonds Using QuantLib
 :tags: python, finance, quantlib
 :slug: quantlib-bond-modeling
 :description: This post will walk through an example of modeling fixed rate bonds using QuantLib.
-
+:category: quantlib
 
 Let's consider a hypothetical bond with a par value of 100, that pays 6% coupon
 semi-annually issued on January 15th, 2015 and set to mature on January 15th, 2016.

@@ -5,6 +5,7 @@ An Introduction to Interest Rate Term Structure in QuantLib
 :tags: python, finance, quantlib
 :slug: quantlib-term-structure-bootstrap-yield-curve
 :description: This post will walk through the basics of bootstrapping yield curve in QuantLib.
+:category: quantlib
 
 Term structure is pivotal to pricing securities. One would need a ``YieldTermStructure`` object
 created in ``QuantLib`` to use with pricing engines. In an earlier post on
