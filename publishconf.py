@@ -20,7 +20,7 @@ STATIC_PATHS = [
     ]
 
 PLUGIN_PATHS = ['./pelican-plugins/']
-PLUGINS = ['related_posts', 'share_post']
+PLUGINS = ['related_posts', 'share_post', 'liquid_tags.notebook']
 RELATED_POSTS_MAX = 5
 
 DEFAULT_LANG = u'en'
@@ -33,7 +33,7 @@ CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 # TRANSLATION_FEED_ATOM = None
 
 # Social widget
-TWITTER_HANDLE = 'gsbala'
+TWITTER_HANDLE = 'gsbalaraman'
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -43,3 +43,8 @@ GOOGLE_ANALYTICS = 'UA-46714334-1'
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
 PATH = "content"
+
+
+# handle ipython notebooks
+NOTEBOOK_DIR = "extra/notebooks"
+#EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')

@@ -33,6 +33,9 @@
         {% endif %}
         {% endif %}
     {% endif %}
+            {% if EXTRA_HEADER %}
+                 {{ EXTRA_HEADER }}
+            {% endif %}
         {% if LOCAL_BOOTSTRAP %}
         <!--link href="{{ SITEURL }}/theme/static/css/journal-bootstrap.min.css" rel="stylesheet" /-->
         <link href="{{ SITEURL }}/theme/static/css/bootstrap.readable.min.css" rel="stylesheet" />
