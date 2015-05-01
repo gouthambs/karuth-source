@@ -2,3 +2,4 @@ pelican>=3.5.0
 Markdown
 fabric
 beautifulsoup4
+ipython==2.4.1
