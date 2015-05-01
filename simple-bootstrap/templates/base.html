@@ -85,6 +85,13 @@
         </script>
 
         <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <script src="{{ SITEURL }}/theme/static/js/jquery.1.11.2.min.js"></script>
+
+        <script>
+          $(document).ready(function(){
+              $(".prompt").hide();
+          });
+        </script>
 
     
     </head>
@@ -145,7 +152,7 @@
 			        {% endif %}
 		            </div>
                 </address><!-- /#about -->
-            </footer><!-- /#contentinfo -->
+            </footer>
         </div><!-- container -->
     </body>
 </html>
