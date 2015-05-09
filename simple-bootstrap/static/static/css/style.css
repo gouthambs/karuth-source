@@ -146,3 +146,12 @@ img{
 
 .key {color : grey;}
 .value {color : black;}
+/*ipython notebook display hacks */
+/* center figure */
+.output_png.output_subarea img {
+    margin: 0 auto;
+}
+/* hide unwanted elements */
+.prompt,.output_text.output_subarea.output_pyout{
+    display: none;
+}
