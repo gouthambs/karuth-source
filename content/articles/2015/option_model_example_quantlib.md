@@ -4,8 +4,7 @@ Date: 2015-05-08
 Category: quantlib
 Tags: quantlib, python, finance
 Author: Gouthaman Balaraman
-Description: Demonstrates how to price European options using QuantLib. Methods using
-Black-Scholes-Merton formula and binomial tree will be discussed.
+Description: Demonstrates how to price European options using QuantLib. Methods using Black-Scholes-Merton formula and binomial tree will be discussed.
 
 {% notebook  european-option-models.ipynb cells[1:]  %}
 
