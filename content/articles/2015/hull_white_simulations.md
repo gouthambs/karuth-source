@@ -11,4 +11,4 @@ Description: Discusses simulation of the Hull White interest rate term structure
 # Conclusion
 
 This post shows how to simulate Hull-White short rate model using QuantLib. You can
-download the [ipython notebook on Hull-White simulations](/extra/notebooks/hull_white_simulations.ipynb).
+download the [ipython notebook on Hull-White simulations](/extra/notebooks/hull-white-simulations.ipynb).
