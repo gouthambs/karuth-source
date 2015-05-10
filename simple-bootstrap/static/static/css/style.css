@@ -155,3 +155,8 @@ img{
 .prompt,.output_text.output_subarea.output_pyout{
     display: none;
 }
+/* Fix output format for notebooks */
+.output_subarea.output_stream.output_stdout.output_text pre{
+    border: none;
+    background-color: #ffffff;
+}

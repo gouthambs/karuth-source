@@ -31,18 +31,17 @@
         <meta property="og:image"
               content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
         {% endif %}
-        {% endif %}
+    {% endif %}
     {% endif %}
             {% if EXTRA_HEADER %}
                  {{ EXTRA_HEADER }}
             {% endif %}
-        {% if LOCAL_BOOTSTRAP %}
-        <!--link href="{{ SITEURL }}/theme/static/css/journal-bootstrap.min.css" rel="stylesheet" /-->
+    {% if LOCAL_BOOTSTRAP %}
         <link href="{{ SITEURL }}/theme/static/css/bootstrap.readable.min.css" rel="stylesheet" />
-        {% else %}
+    {% else %}
         <link href="http://bootswatch.com/readable/bootstrap.css" rel="stylesheet"/>
         <link href="http://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet"/>
-        {% endif %}
+    {% endif %}
         <link href="{{ SITEURL }}/theme/static/css/style.css" rel="stylesheet" />
         
         {% if FEED_ALL_ATOM %}
