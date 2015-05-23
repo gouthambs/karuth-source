@@ -156,7 +156,8 @@ img{
     display: none;
 }
 /* Fix output format for notebooks */
-.output_subarea.output_stream.output_stdout.output_text pre{
+.output_subarea.output_stream.output_stdout.output_text pre, 
+.output_area pre.ipynb{
     border: none;
     background-color: #ffffff;
 }
@@ -166,6 +167,10 @@ div.collapseheader {
     background-color: #E0EBEB;
     padding: 2px;
     cursor: pointer;
+}
+code {
+	color: #333333;
+	background-color: #ffffff;
 }
 
 
