@@ -160,3 +160,13 @@ img{
     border: none;
     background-color: #ffffff;
 }
+/* expandable code ipython */
+div.collapseheader {
+    width=100%;
+    background-color: #E0EBEB;
+    padding: 2px;
+    cursor: pointer;
+}
+
+
+
