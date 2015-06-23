@@ -105,7 +105,7 @@ and developed) have risk of default as well.
 Once the risk-free rate $r_{ft}$ has been identified, the excess return can be defined
 as 
 
-$$ r*_{it} = r_{it} - r_{ft} $$
+$$ r_{it}^* = r_{it} - r_{ft} $$
 
 ### Building the Data Sample
 
