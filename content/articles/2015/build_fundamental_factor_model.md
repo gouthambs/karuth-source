@@ -21,7 +21,7 @@ $$ E(r_i) = E(\\alpha_i) + \\sum_{j=1}{K} \\beta_{ij} E(f_j) $$
 
 This can be expressed concisely using the matrix representation:
 
-$$ r_i = \\mathbf{\\beta}^T_i \\mathbf{f}  + \epsilon_i $$
+$$ r_i = \\mathbf{\\beta}^T_i \\mathbf{f}  + \\epsilon_i $$
 
 where:
 
@@ -105,12 +105,62 @@ and developed) have risk of default as well.
 Once the risk-free rate $r_{ft}$ has been identified, the excess return can be defined
 as 
 
-$$ r_{it}^* = r_{it} - r_{ft} $$
+$$ \\hat{r}_{it} = r_{it} - r_{ft} $$
 
 ### Building the Data Sample
 
+One of the crucial components in the factor model building process is 
+to create a data sample that can then be used to deduce the model 
+parameters. For example, to model the U.S. equity market one can use
+the top 2000 to 3000 stocks by market cap. Depending on where we cutoff, 
+this will include stocks in the large-cap and mid-cap range. This would mean
+that the model may not precisely model the effects in the small-cap stocks.
+On the other hand, limiting to stocks in the mid-cap or large-cap range can
+provide more stability to the model, and that could be a desirable thing.  
 
+Once we have a filter for deciding how we want to build the basket of 
+instruments for model building, we also have to decide the frequency and 
+period for which we need to collect the data. What do we mean by that? The
+regression step involved in the model building will fit the stock returns
+$r_{it}$ for a period (such as one day returns or monthly returns) as 
+a function of various factors $f$. The return data is collected over multiple
+periods, such as 3 years or 5 years. For instance, our data sample could
+be top 3000 stocks by market cap with monthly returns collected for 3 years.
+A rule of thumb is that the frequency of the investor's re-balancing strategy
+should determine the frequency of the returns used in the model building.
+If the re-balances  monthly, then one should use monthly returns in the 
+model fitting. There should be sufficient time periods included in order
+to avoid spurious fitting effects and to improve robustness of fit. 
+It is conventional to use 3 to 5 years worth of data while using monthly 
+returns, and 2 to 3 years while using weekly returns.  
 
+Another factor that one should keep in mind is to include companies
+that are not only alive at the time of model building but also to include
+companies that may have gotten delisted or bankrupt. Failure to do 
+so will introduce what is called as *survivorship bias* in your model. 
+
+## Fitting the Model
+
+Once we have the data sample assembled, one can use regression utilities
+in statistical packages such as *R*, Python's *Statsmodels* package, *Matlab*,
+SAS to perform a panel regression. The goal of the panel regression is 
+to estimate factor premium $\\mathbf{f}$ given by the equation 
+
+$$ r_i = \\mathbf{\\beta}^T_i \\mathbf{f}  + \\epsilon_i $$
+
+where the returns $r_i$ and the factor exposures $\\mathbf{\\beta}_i$
+are known. A simple way to estimate factor premiums is by using 
+Ordinary Least Squares (OLS). This will also give us an estimate
+of the variance matrix $V(\\mathbf{\\hat{f}}$.
+
+## Robustness Considerations
+
+It is important that the estimates of the factor premium and 
+the variance of factor premiums are fairly robust. 
+
+## Conclusions
+
+## Further Reading
 
 
 ... to be continued
