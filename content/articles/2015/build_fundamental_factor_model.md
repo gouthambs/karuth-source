@@ -12,12 +12,12 @@ Description: This post outlines the methodology behind building a fundamental fa
 In a multi-factor model, the return of a stock can be broken out 
 into multiple factors.
 
-$$ r_i = \\alpha_i + \\sum_{j=1}{K} \\beta_{ij} f_j + \\epsilon_i $$
+$$ r_i = \\alpha_i + \\sum_{j=1}^{K} \\beta_{ij} f_j + \\epsilon_i $$
 
 The term $\\epsilon_i$ is the error term which is assumed to have a 
 distribution with zero mean. Now we can write the average return as
 
-$$ E(r_i) = E(\\alpha_i) + \\sum_{j=1}{K} \\beta_{ij} E(f_j) $$
+$$ E(r_i) = E(\\alpha_i) + \\sum_{j=1}^{K} \\beta_{ij} E(f_j) $$
 
 This can be expressed concisely using the matrix representation:
 
@@ -105,7 +105,8 @@ and developed) have risk of default as well.
 Once the risk-free rate $r_{ft}$ has been identified, the excess return can be defined
 as 
 
-$$ \\hat{r}_{it} = r_{it} - r_{ft} $$
+$$ r_{it}' = r_{it} - r_{ft} $$
+
 
 ### Building the Data Sample
 
@@ -151,25 +152,63 @@ $$ r_i = \\mathbf{\\beta}^T_i \\mathbf{f}  + \\epsilon_i $$
 where the returns $r_i$ and the factor exposures $\\mathbf{\\beta}_i$
 are known. A simple way to estimate factor premiums is by using 
 Ordinary Least Squares (OLS). This will also give us an estimate
-of the variance matrix $V(\\mathbf{\\hat{f}}$.
+of the sample variance-covariance matrix $V(\\mathbf{\\hat{f}})$.
+
+\\begin{eqnarray} 
+\\mathbf{f} &=& \\left( \\sum_{t=1}^T \\sum_{i=1}^N  (\\mathbf{\\beta}\_{it} - \\bar{\\mathbf{\\beta}} ) (  \\mathbf{\\beta}\_{it} - \\bar{\\mathbf{\\beta}} )^T
+\\right)^{-1}
+  \\sum_{t=1}^{T} \\sum_{i=1}^{N} (\\mathbf{\\beta}\_{it} - \\bar{\\mathbf{\\beta}} ) (r\_{it} - \\bar{r})
+\\end{eqnarray}
+where 
+
+$$
+\\bar{\\mathbf{\\beta}} = \\frac{1}{NT} \\sum_{t=1}^{T} \\sum_{i=1}^{N} \\mathbf{\\beta}\_{it} 
+$$
+and
+$$
+\\bar{r} = \\frac{1}{NT} \\sum_{t=1}^{T} \\sum_{i=1}^{N} r\_{it} 
+$$ 
+
+The variance-covariance matrix of the factor premium estimate is given as:
+
+\\begin{eqnarray}
+\\hat{V}(\\hat{f}) &=& \\hat{\\sigma}^2 
+\\left(
+ \\sum\_{t=1}^T \\sum\_{i=1}^N  
+  (\\mathbf{\\beta}\_{it} - \\bar{\\mathbf{\\beta}} ) 
+  (  \\mathbf{\\beta}\_{it} - \\bar{\\mathbf{\\beta}} )^T
+\\right)
+\\end{eqnarray}
+
+where $\\hat{\\sigma}^2$ is the variance of the error term $\\epsilon_{it}$
+$$
+\\hat{\\sigma}^2 = \\frac{1}{NT} \\sum\_{t=1}^T \\sum\_{i=1}^N  
+ (r\_{it} - \\mathbf{\\beta}\_{it}\\hat{f})
+$$
 
 ## Robustness Considerations
 
 It is important that the estimates of the factor premium and 
-the variance of factor premiums are fairly robust. 
+the variance of factor premiums are robust. One way to accomplish
+that is by  using generalized least squares (GLS). 
+Corrections for heteroskedasticity and autocorrelation can be
+incorporated by using the [Newey-West Estimator](https://en.wikipedia.org/wiki/Newey%E2%80%93West_estimator) to correct for heteroskedacity and auto correlation.
+The statistical package R has an implementation of Newey-West in the 
+[sandwich](http://cran.r-project.org/web/packages/sandwich/index.html) package.
+[Covariance Shrinkage](http://www.ledoit.net/honey.pdf) was suggested by Ledoit
+and Wolf as a way to reduce estimation error in the Covariance Matrix. This technique
+helps reduce the extremes in the covariance matrix coefficients towards a 
+central value, and is necessary in the portfolio optimization process. 
 
 ## Conclusions
 
+Here we gave an introduction to the process of building a factor model. This text
+is informative for some one to get started. There are lots of nuances that one 
+needs to consider to incorporate the intuition of investment managers and 
+follow the wind as the market currents change.
+
 ## Further Reading
 
+1. Ludwig B. Chincarini & Daehwan Kim, *Quantitative Equity Portfolio Management*, McGraw Hill
+2. Olivier Ledoit & Michael Wolf, *Honey, I Shrunk the Sample Covariance Matrix*, [http://www.ledoit.net/honey.pdf](http://www.ledoit.net/honey.pdf)
 
-... to be continued
-
-
-
-
-
-
-
-
- 
