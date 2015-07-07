@@ -29,31 +29,6 @@ Out of the box Flask-Blogging has support for the following:
 - Google analytics for usage tracking
 - Well documented, tested, and extensible design
 
-Screen Shots
-------------
-
-Blog Editor
-~~~~~~~~~~~
-Here is a screenshot of the blog editor page. This editor uses the awesome
-`Bootstrap-Markdown <https://github.com/toopay/bootstrap-markdown>`_ editor.
-
-
-.. figure:: http://flask-blogging.readthedocs.org/en/latest/_images/blog_editor.png
-
-    Blog Editor
-
-Blog Page
-~~~~~~~~~
-
-The blog page when rendered looks as shown here. The page is configured out of the 
-box to include LaTeX support. The math is rendered using MathJax. I have thought 
-about using KaTex, but decided to wait till they have support for ``eqnarray``.
-As you can see, it uses Disqus for comments. 
-
-
-.. figure:: http://flask-blogging.readthedocs.org/en/latest/_images/blog_page.png
-
-    Blog Page
 
 Minimal Example
 ---------------
@@ -131,6 +106,30 @@ to configure authentication. This example uses version 0.2.0.
     
     if __name__ == "__main__":
         app.run(debug=True, port=8000, use_reloader=True)
+
+Screen Shots
+------------
+
+Blog Editor
+~~~~~~~~~~~
+Here is a screenshot of the blog editor page. This editor uses the awesome
+`Bootstrap-Markdown <https://github.com/toopay/bootstrap-markdown>`_ editor.
+
+.. figure:: http://flask-blogging.readthedocs.org/en/latest/_images/blog_editor.png
+
+    Blog Editor
+
+Blog Page
+~~~~~~~~~
+
+The blog page when rendered looks as shown here. The page is configured out of the 
+box to include LaTeX support. The math is rendered using MathJax. I have thought 
+about using KaTex, but decided to wait till they have support for ``eqnarray``.
+As you can see, it uses Disqus for comments. 
+
+.. figure:: http://flask-blogging.readthedocs.org/en/latest/_images/blog_page.png
+
+    Blog Page
 
 Installation
 ------------
