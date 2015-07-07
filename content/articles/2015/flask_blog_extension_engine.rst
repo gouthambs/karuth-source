@@ -61,27 +61,29 @@ Minimal Example
 Here is a minimal example for getting a blog up and running. There is no
 security in the authentication here. But if you have authentication 
 setup using either Flask-Login or Flask-Security, it should be straight forward
-to configure authentication.
+to configure authentication. This example uses version 0.2.0.
 
 .. code:: python
 
     from flask import Flask, render_template_string, redirect
     from sqlalchemy import create_engine
-    from flask.ext.login import UserMixin, LoginManager, login_user, logout_user
+    from flask.ext.login import UserMixin, LoginManager, \
+        login_user, logout_user
     from flask.ext.blogging import SQLAStorage, BloggingEngine
     
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "secret"  # for WTF-forms and login
+    app.config["BLOGGING_URL_PREFIX"] = "/blog"
+    app.config["BLOGGING_DISQUS_SITENAME"] = "test"
+    app.config["BLOGGING_SITEURL"] = "http://localhost:8000"
     
     # extensions
     engine = create_engine('sqlite:////tmp/blog.db')
     sql_storage = SQLAStorage(engine)
-    blog_engine = BloggingEngine(app, sql_storage, url_prefix="/blog",
-                                 config={"DISQUS_SITENAME": "test",
-                                         "SITEURL": "http://localhost:8000"})
+    blog_engine = BloggingEngine(app, sql_storage)
     login_manager = LoginManager(app)
     
-    
+    # user class for providing authentication
     class User(UserMixin):
         def __init__(self, user_id):
             self.id = user_id
@@ -100,11 +102,11 @@ to configure authentication.
         <head> </head>
         <body>
             {% if current_user.is_authenticated() %}
-                <a href="/logout/"> Logout </a>
+                <a href="/logout/">Logout</a>
             {% else %}
-                <a href="/login/"> Login </a>
+                <a href="/login/">Login</a>
             {% endif %}
-            &nbsp&nbsp<a href="/blog/"> Blog </a>
+            &nbsp&nbsp<a href="/blog/">Blog</a>
             &nbsp&nbsp<a href="/blog/sitemap.xml">Sitemap</a>
             &nbsp&nbsp<a href="/blog/feeds/all.atom.xml">ATOM</a>
         </body>
@@ -129,7 +131,6 @@ to configure authentication.
     
     if __name__ == "__main__":
         app.run(debug=True, port=8000, use_reloader=True)
-
 
 Installation
 ------------
