@@ -2,7 +2,7 @@ Flask-Blogging: A Python Flask Blog Engine as an Extension
 ##########################################################
 
 :date: 2015-07-04
-:tags: python, flask
+:tags: python, flask, programming
 :slug: flask-blogging-python-flask-blog-engine-extension
 :description: This post will give an introduction to Markdown based Flask blog engine extension.
 :category: python
