@@ -36,12 +36,12 @@ Minimal Example
 Here is a minimal example for getting a blog up and running. There is no
 security in the authentication here. But if you have authentication 
 setup using either Flask-Login or Flask-Security, it should be straight forward
-to configure authentication. This example uses version 0.2.0.
+to configure authentication. This example uses version 0.3.2.
 
 .. code:: python
 
     from flask import Flask, render_template_string, redirect
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, MetaData
     from flask.ext.login import UserMixin, LoginManager, \
         login_user, logout_user
     from flask.ext.blogging import SQLAStorage, BloggingEngine
@@ -54,9 +54,11 @@ to configure authentication. This example uses version 0.2.0.
     
     # extensions
     engine = create_engine('sqlite:////tmp/blog.db')
-    sql_storage = SQLAStorage(engine)
+    meta = MetaData()
+    sql_storage = SQLAStorage(engine, meta=meta)
     blog_engine = BloggingEngine(app, sql_storage)
     login_manager = LoginManager(app)
+    meta.create_all(bind=engine)
     
     # user class for providing authentication
     class User(UserMixin):
