@@ -7,11 +7,11 @@ Adding Caching to Python Flask-Blogging Engine
 :description: This post will discuss caching support to Flask-Blogging
 :category: python
 
-I deployed my blogging engine (using `Flask-Blogging extension <https://github.com/gouthambs/Flask-Blogging>`_)
+I deployed my blog (using `Flask-Blogging  <https://github.com/gouthambs/Flask-Blogging>`_ extension)
 to a site I am building. I am currently hosting the test version on the free instance
 of `Openshift <https://openshift.com>`_. So these are not very powerful servers, and
 I wasn't expecting any great performance. Here is what I saw while
-using Version 0.3.2 of ``Flask-Blogging`::
+using Version 0.3.2 of ``Flask-Blogging``::
 
   $> ab -kc 30 -t 10 https://ucarpool.org/blog/
   
