@@ -7,9 +7,9 @@ Adding Caching to Python Flask-Blogging Engine
 :description: This post will discuss caching support to Flask-Blogging
 :category: python
 
-I deployed my blogging engine `Flask-Blogging github <https://github.com/gouthambs/Flask-Blogging>`_ 
+I deployed my blogging engine (using `Flask-Blogging extension <https://github.com/gouthambs/Flask-Blogging>`_)
 to a site I am building. I am currently hosting the test version on the free instance
-of `Openshift<https://openshift.com>`_. So these are not very powerful servers, and
+of `Openshift <https://openshift.com>`_. So these are not very powerful servers, and
 I wasn't expecting any great performance. Here is what I saw while
 using Version 0.3.2 of ``Flask-Blogging`::
 
@@ -109,4 +109,8 @@ Here is resulting performance after using a filesystem based cache::
 Now we are able to serve 180 requests/second. A good 7X performance gain for using a 
 filesystem cache. Using in memory like Redis, or SSD filesystem should be even better.
 
+Conclusion
+==========
 
+Flask-Blogging, the Flask extension to add Markdown based blog support to Flask sites, incorporates
+caching support which has greatly improved its performance.
