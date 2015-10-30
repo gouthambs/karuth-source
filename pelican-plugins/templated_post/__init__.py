@@ -1,0 +1,1 @@
+from .templated_post import *
