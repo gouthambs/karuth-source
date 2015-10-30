@@ -17,7 +17,7 @@
             {% if article.title != "QuantLib Python Tutorials" %}
                 {% for tag in article.tags %}
                     {% if "quantlib" == tag.name %}
-                    <li> <b><a href="{{ SITEURL }}/{{article.url}}">{{ article.title }}</a></b> :{% if article.description %}{{ article.description }} {% endif %}</li>
+                    <li> <b><a href="{{ SITEURL }}/{{article.url}}">{{ article.title }}</a></b>: {% if article.description %}{{ article.description }} {% endif %}</li>
                     {% endif %}
                 {% endfor %}
             {% endif %}
