@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>QuantLib Python Tutorials</title>
+        <meta name="tags" content="quantlib, python" />
+        <meta name="date" content="2015-10-30" />
+        <meta name="category" content="quantlib" />
+        <meta name="authors" content="Gouthaman Balaraman" />
+        <meta name="description" content="This post is a collection of links to all my quantlib python tutorial" />
+        <meta name="templated" content="True" />
+        
+    </head>
+    <body>
+        This is the content of my super blog post.
+        <ul>
+        {% for article in dates %}
+            {% if article.title != "QuantLib Python Tutorials" %}
+                {% for tag in article.tags %}
+                    {% if "quantlib" == tag.name %}
+                    <li> <b><a href="{{ SITEURL }}/{{article.url}}">{{ article.title }}</a></b> :{% if article.description %}{{ article.description }} {% endif %}</li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        
+        </ul>
+    </body>
+</html>

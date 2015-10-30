@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Gouthaman Balaraman'
 SITENAME = u'Gouthaman Balaraman'
-#SITEURL = '/'
+SITEURL = '/'
 LOCAL_BOOTSTRAP = True
 ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
@@ -20,7 +20,7 @@ STATIC_PATHS = [
 
 #plugin parameters
 PLUGIN_PATHS = ['./pelican-plugins/']
-PLUGINS = ['related_posts', 'share_post', 'liquid_tags.notebook' ]
+PLUGINS = ['related_posts', 'share_post', 'liquid_tags.notebook', 'templated_post' ]
 
 RELATED_POSTS_MAX = 5
 
@@ -40,7 +40,7 @@ CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 #          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-TWITTER_HANDLE = 'gsbala'
+TWITTER_HANDLE = 'gbalaraman'
 #SOCIAL = (('Twitter','https://twitter.com/'+TWITTER_HANDLE),)
             #(('You can add links in your config file', '#'),
           #('Another social link', '#'),)
@@ -54,7 +54,7 @@ FEED_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
 
-READERS = {'html': None}
+# READERS = {'html': None}
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
 PATH = "content"

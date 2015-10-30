@@ -20,7 +20,7 @@ STATIC_PATHS = [
     ]
 
 PLUGIN_PATHS = ['./pelican-plugins/']
-PLUGINS = ['related_posts', 'share_post', 'liquid_tags.notebook']
+PLUGINS = ['related_posts', 'share_post', 'liquid_tags.notebook', 'templated_post']
 RELATED_POSTS_MAX = 5
 
 DEFAULT_LANG = u'en'
@@ -37,7 +37,7 @@ TWITTER_HANDLE = 'gsbalaraman'
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-READERS = {'html': None}
+# READERS = {'html': None}
 DISQUS_SITENAME = "gouthamanbalaramancom"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
 THEME = "simple-bootstrap"
