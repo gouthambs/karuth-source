@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>QuantLib Python Tutorials</title>
+        <title>QuantLib Python Tutorials With Examples</title>
         <meta name="tags" content="quantlib, python" />
         <meta name="date" content="2015-10-30" />
         <meta name="category" content="quantlib" />
@@ -13,7 +13,7 @@
         I have written a lot of little tutorials on using QuantLib python bindings. In these posts I explain some
         of the QuantLib concepts using minimal examples. Following are the links to these posts:
         <ul>
-        {% for article in dates %}
+        {% for article in dates | reverse %}
             {% if article.title != "QuantLib Python Tutorials" %}
                 {% for tag in article.tags %}
                     {% if "quantlib" == tag.name %}
