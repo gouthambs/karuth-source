@@ -14,7 +14,7 @@
         of the QuantLib concepts using minimal examples. Following are the links to these posts:
         <ul>
         {% for article in dates | reverse %}
-            {% if article.title != "QuantLib Python Tutorials" %}
+            {% if article.title != "QuantLib Python Tutorials With Examples" %}
                 {% for tag in article.tags %}
                     {% if "quantlib" == tag.name %}
                     <li> <b><a href="{{ SITEURL }}/{{article.url}}">{{ article.title }}</a></b>: {% if article.description %}{{ article.description }} {% endif %}</li>
