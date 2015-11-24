@@ -130,4 +130,14 @@ branch, to work on your modifications.
 
     git branch -a
     
+Tagging
+-------
 
+- **List all the tags**::
+
+    git tag
+
+- **Creating tags**::
+
+    git tag -a v0.5.0 -m "Tagging version 0.5.0"
+    
