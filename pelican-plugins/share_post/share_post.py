@@ -37,8 +37,10 @@ def share_post(content):
     title = article_title(content)
     url = article_url(content)
     summary = article_summary(content)
-
-    tweet = ('%s%s%s' % (title, quote(' '), url)).encode('utf-8')
+    twitter_handle = content.settings.get("TWITTER_HANDLE")
+    credit = " by @"+twitter_handle if twitter_handle else ""
+    tweet = ('%s%s%s%s' % (title, credit, quote(' '), url)).encode('utf-8')
+        
     diaspora_link = 'https://sharetodiaspora.github.io/?title=%s&url=%s' % (title, url)
     facebook_link = 'http://www.facebook.com/sharer/sharer.php?s=100&amp;p%%5Burl%%5D=%s' % url
     gplus_link = 'https://plus.google.com/share?url=%s' % url
