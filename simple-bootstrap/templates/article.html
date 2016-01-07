@@ -38,7 +38,7 @@
          <p class="lead">{{article.description}}</p>
       {% endif %}
       {% if article.share_post and article.status != 'draft' %}
-{% endif %}
+      {% endif %}
       
       <!-- article content -->
      {{ article.content }}
@@ -46,6 +46,12 @@
      
      <!-- article tags-->
      {% if article.tags %}
+        {% for tag in article.tags %}
+            {% if "quantlib" == tag.name %}
+            <em>Visit here for other <a href ="{{ SITEURL }}/blog/quantlib-python-tutorials-with-examples">QuantLib Python examples</a>.</em>
+            <br>
+            {% endif %}
+        {% endfor %}
         <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;
         {% for tag in article.tags %}
             <span class="label label-default"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>&nbsp;&nbsp;
