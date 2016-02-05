@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Gouthaman Balaraman'
-SITENAME = u'Gouthaman Balaraman'
+AUTHOR = u'Goutham Balaraman'
+SITENAME = u'G B'
 SITEURL = 'http://gouthamanbalaraman.com'
 LOCAL_BOOTSTRAP  = True
 #SITEURL = '/'
