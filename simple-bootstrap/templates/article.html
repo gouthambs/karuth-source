@@ -40,20 +40,24 @@
       {% if article.share_post and article.status != 'draft' %}
       {% endif %}
       
+      {% if article.tags %}
+	      {% for tag in article.tags %}
+	            {% if "quantlib" == tag.name %}
+	            <br>
+	            <em>Found this post useful? Can you help me make this post more usefulr by answering this 
+	            <a href="https://docs.google.com/forms/d/1iRI-YWgqCB-rUhxVsFf-s_y00yAB0vyb-b816q6oktk/viewform">one minute survey.</a></em>
+	            Visit here for other <a href ="{{ SITEURL }}/blog/quantlib-python-tutorials-with-examples.html">QuantLib Python examples</a>.
+	            <br>
+	            {% endif %}
+	        {% endfor %}
+      {% endif %}
+      
       <!-- article content -->
      {{ article.content }}
      <br>
      
      <!-- article tags-->
      {% if article.tags %}
-        {% for tag in article.tags %}
-            {% if "quantlib" == tag.name %}
-            <em>Found this post useful? You can thank me by answering this 
-            <a href="https://docs.google.com/forms/d/1iRI-YWgqCB-rUhxVsFf-s_y00yAB0vyb-b816q6oktk/viewform">one minute survey.</a></em>
-            Visit here for other <a href ="{{ SITEURL }}/blog/quantlib-python-tutorials-with-examples.html">QuantLib Python examples</a>.
-            <br><br>
-            {% endif %}
-        {% endfor %}
         <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;
         {% for tag in article.tags %}
             <span class="label label-default"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>&nbsp;&nbsp;
