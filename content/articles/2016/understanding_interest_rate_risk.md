@@ -33,8 +33,8 @@ us look at a few examples.
   
 - **Mortgage Lenders & Servicers**: Mortgage lenders allow prospective home buyers to lock in on a 
   mortgage rate for a couple of months. Lets say, that the lender has provided the home buyer a locked
-  mortgage rate for a loan of $100,000. But in 2 months time, when the home buyer closes on the loan,
-  should the interest rates rise, then mortgage loan is worth less than $100,000 and the lender stands
+  mortgage rate for a loan of \$100,000. But in 2 months time, when the home buyer closes on the loan,
+  should the interest rates rise, then mortgage loan is worth less than \$100,000 and the lender stands
   to lose when he sells in the secondary market. Similarly, on the mortgage servicing side, when interest
   rates go down, the loans in the servicing portfolio could drop out due to interest rate refinancing. This
   can lead to decrease in projected cashflows.
