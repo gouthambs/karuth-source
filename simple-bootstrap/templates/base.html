@@ -101,11 +101,7 @@
                 </div>
             </div>
             <div class="row">
-				<div class="col-md-2 col-md-offset-1">
-				{% block leftcontent %}
-				{% endblock %}
-				</div>
-                <div class="col-md-8">
+                <div class="col-md-8 col-md-offset-2">
                 {% block content %}
                 {% endblock %}
                 </div>
@@ -121,7 +117,7 @@
                 <address id="about" class="vcard body">
                     &copy; <a href="{{SITEURL}}">{{AUTHOR}}</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
                     <div class="pull-right">
-                    	<a href="http://www.bloglovin.com/blog/14559547/?claim=cqravg9v4n2">Bloglovin</a>
+                    	<!--a href="http://www.bloglovin.com/blog/14559547/?claim=cqravg9v4n2">Bloglovin</a-->
                     {% if FEED_ALL_ATOM %}
 			            <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom</a>
 			        {% endif %}

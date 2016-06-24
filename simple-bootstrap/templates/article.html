@@ -28,25 +28,7 @@
         </p>
      </div>
 {% endblock %}
-{% block leftcontent %}
-	{% if article.tags %}
-	      {% for tag in article.tags %}
-	            {% if "quantlib" == tag.name %}
-	            <a href="https://leanpub.com/quantlibpythoncookbook">
-				<div class="row">
-					<div class="text-center center_img">
-						<img alt="QuantLib Python Cookbook" 
-							 src="https://s3.amazonaws.com/titlepages.leanpub.com/quantlibpythoncookbook/small?1465967986"
-							 title= "QuantLib Python Cookbook">
-						<h5>QuantLib Python Cookbook</h5>
-					</div>
-				</div>
-					
-				</a>
-	            {% endif %}
-	        {% endfor %}
-      {% endif %}
-{% endblock %}
+
 {% block content %}
 
 <div class="bs-docs-section">
@@ -58,21 +40,37 @@
       {% if article.share_post and article.status != 'draft' %}
       {% endif %}
       
-      {% if article.tags %}
+      
+      
+      <!-- article content -->
+     {{ article.content }}
+     <br><br>
+     {% if article.tags %}
 	      {% for tag in article.tags %}
 	            {% if "quantlib" == tag.name %}
-	            <em>Found this post useful? Can you please answer this 
-	            <a href="https://docs.google.com/forms/d/1iRI-YWgqCB-rUhxVsFf-s_y00yAB0vyb-b816q6oktk/viewform">one minute survey.</a></em>
-	            Visit here for other <a href ="{{ SITEURL }}/blog/quantlib-python-tutorials-with-examples.html">QuantLib Python examples</a>.
+				
+				<div class="row">
+					<div class="col-md-3">
+						<a href="https://leanpub.com/quantlibpythoncookbook">
+							<img alt="QuantLib Python Cookbook" 
+								 src="https://s3.amazonaws.com/titlepages.leanpub.com/quantlibpythoncookbook/medium?1465967986"
+								 title= "QuantLib Python Cookbook">
+						</a>
+					</div>
+					<div class="col-md-9">
+						<em>Updated posts from this blog and transcripts of Luigi's screencasts on YouTube is compiled 
+						into <a href="https://leanpub.com/quantlibpythoncookbook"> QuantLib Python Cookbook </a>. 
+						Visit here for other <a href ="{{ SITEURL }}/blog/quantlib-python-tutorials-with-examples.html">QuantLib Python examples</a>.
+						You can also help improve this blog series by answering this 
+						<a href="https://docs.google.com/forms/d/1iRI-YWgqCB-rUhxVsFf-s_y00yAB0vyb-b816q6oktk/viewform">one minute survey.</a></em>
+					</div>
+				</div>
 	            <br><br>
 	            {% endif %}
 	        {% endfor %}
       {% endif %}
-      
-      <!-- article content -->
-     {{ article.content }}
-     <br>
-     
+	  <br>
+	 
      <!-- article tags-->
      {% if article.tags %}
         <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;
