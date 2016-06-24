@@ -36,13 +36,6 @@
             {% if EXTRA_HEADER %}
                  {{ EXTRA_HEADER }}
             {% endif %}
-    {% if LOCAL_BOOTSTRAP %}
-        <link href="{{ SITEURL }}/theme/static/css/bootstrap.readable.min.css" rel="stylesheet" />
-    {% else %}
-        <link href="http://bootswatch.com/readable/bootstrap.css" rel="stylesheet"/>
-        <link href="http://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet"/>
-    {% endif %}
-        <link href="{{ SITEURL }}/theme/static/css/style.css" rel="stylesheet" />
         
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
@@ -69,19 +62,12 @@
         <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
         {% endblock head %}
-        <!-- Google Analytics -->
-        {% include "analytics.html" %}
-        <!-- Using MathJax, with the delimiters $ -->
-        <!-- Conflict with pygments for the .mo and .mi -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          "HTML-CSS": {
-          styles: {
-          ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
-          },
-          tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']],processEscapes: true}
-          });
-        </script>
+		{% if LOCAL_BOOTSTRAP %}
+        <link href="{{ SITEURL }}/theme/static/css/bootstrap.readable.min.css" rel="stylesheet" />
+		{% else %}
+        <link href="http://bootswatch.com/readable/bootstrap.css" rel="stylesheet"/>
+        <link href="http://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet"/>
+		{% endif %}
     </head>
 
     <body>
@@ -148,6 +134,8 @@
             </footer>
         </div><!-- container -->
         <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <link href="{{ SITEURL }}/theme/static/css/style.css" rel="stylesheet" />
+        
         <script src="{{ SITEURL }}/theme/static/js/jquery.1.11.2.min.js"></script>
         <script src="{{ SITEURL }}/theme/static/js/bootstrap.min.js"></script>
         <script type="text/javascript">
@@ -164,5 +152,18 @@
 	});
 	});
 	</script>
+	<!-- Google Analytics -->
+        {% include "analytics.html" %}
+        <!-- Using MathJax, with the delimiters $ -->
+        <!-- Conflict with pygments for the .mo and .mi -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          "HTML-CSS": {
+          styles: {
+          ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+          },
+          tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']],processEscapes: true}
+          });
+        </script>
     </body>
 </html>
