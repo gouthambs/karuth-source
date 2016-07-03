@@ -2,7 +2,7 @@ Title: QuantLib Python Notebooks On Docker
 Slug: quantlib-python-notebook-docker
 Date: 2016-07-02
 Category: QuantLib
-Tags: python, finance, programming
+Tags: python, finance, programming, quantlib
 Description: Running QuantLib python notebooks on Docker
 
 
