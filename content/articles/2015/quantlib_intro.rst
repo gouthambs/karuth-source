@@ -1,10 +1,10 @@
-Introduction to QuantLib
-########################
+Introduction to QuantLib Python
+###############################
 
 :date: 2015-03-24
 :tags: python, finance, quantlib
 :slug: quantlib-basics
-:description: This post will walk through some of the basics of QuantLib library.
+:description: This post will walk through some of the basics of QuantLib Python library.
 :category: quantlib
 
 I installed the latest version of QuantLib (V1.5) and the python wrapper to QuantLib.

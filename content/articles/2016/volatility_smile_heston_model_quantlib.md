@@ -1,9 +1,9 @@
-Title: Modeling Volatility Smile and Heston Model Calibration Using QuantLib
+Title: Modeling Volatility Smile and Heston Model Calibration Using QuantLib Python
 Slug: volatility-smile-heston-model-calibration-quantlib-python
 Date: 2016-05-19
 Category: quantlib
 Tags: quantlib, python, finance
-Description: Provides an introduction to constructing implied volatility surface consistend with the smile observed in the market and calibrating Heston model using QuantLib.
+Description: Provides an introduction to constructing implied volatility surface consistend with the smile observed in the market and calibrating Heston model using QuantLib Python.
 
 {% notebook  heston_model_calibration_smile.ipynb cells[1:]  %}
 

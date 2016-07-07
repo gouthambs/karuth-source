@@ -1,9 +1,9 @@
-Title: Valuing Convertible Bonds Using QuantLib
+Title: Valuing Convertible Bonds Using QuantLib Python
 Slug: value-convertible-bond-quantlib-python
 Date: 2016-03-16
 Category: quantlib
 Tags: quantlib, python, finance
-Description: Provides an introduction to valuation of convertible bonds using QuantLib with a minimal example.
+Description: Provides an introduction to valuation of convertible bonds using QuantLib Python with a minimal example.
 
 {% notebook  convertible_bond.ipynb cells[1:]  %}
 
