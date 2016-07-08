@@ -68,6 +68,9 @@
         <link href="http://bootswatch.com/readable/bootstrap.css" rel="stylesheet"/>
         <link href="http://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet"/>
 		{% endif %}
+
+	<!-- Google Analytics -->
+        {% include "analytics.html" %}
     </head>
 
     <body>
@@ -148,9 +151,7 @@
 	});
 	});
 	</script>
-	<!-- Google Analytics -->
-        {% include "analytics.html" %}
-        <!-- Using MathJax, with the delimiters $ -->
+	<!-- Using MathJax, with the delimiters $ -->
         <!-- Conflict with pygments for the .mo and .mi -->
         <script type="text/x-mathjax-config">
           MathJax.Hub.Config({
