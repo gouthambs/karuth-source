@@ -98,6 +98,12 @@
     <div class="comment">
         <div id="disqus_thread"></div> <!-- comment app container -->
     </div>
+    <script type="text/javascript">
+    	$(document).ready(function () {
+    	  $("body table").addClass("table table-sm table-hover");
+    	  $("body table").attr("border",0);
+  	});
+    </script>
 	<!-- Comment BEGIN -->
     <script type="text/javascript">
         var disqus_shortname = '{{ DISQUS_SITENAME }}'; // required: replace example with your forum shortname
