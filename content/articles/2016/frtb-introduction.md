@@ -7,7 +7,7 @@ Description: Gives an introduction to the proposals and changes introduced due t
 
 
 Basel Committee on Banking Supervision (BCBS) released a consultative document 
-titled, "The Fundamental Review of the Trading Book" (FRTB) in 2012 [1]( www.bis.org/publ/bcbs219.htm). 
+titled, "The Fundamental Review of the Trading Book" (FRTB) in 2012 [1](http://www.bis.org/publ/bcbs219.htm). 
 The intent of this document and the subsequent discussions and studies was to address the shortcomings of the 
 existing market risk capital framework, and reduce the variability in the minimum capital standard
 for market risk across different jurisdictions.

@@ -72,5 +72,5 @@ you can incorporate it into your workflow as shown below:
     lgr.info("Test Message")
 	
 And that completes the MSMQ logger using python. Now all your logs will be pushed to the KaruthQueue
-that we created. You can use the example shown `here </blog/sending-msmq-messages-python.rst>`_ to read the messages in a seperate application
+that we created. You can use the example shown `here <{filename}/sending-msmq-messages-python.rst>`_ to read the messages in a seperate application
 and store any way you chose, files, database etc.
