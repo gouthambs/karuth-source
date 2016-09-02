@@ -11,6 +11,7 @@
      <!--span class="glyphicon glyphicon-user"></span--> by  
      <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">&nbsp;{{article.author}} </a>
      {% endif %}
+        {% if article.share_post %}
 
         <p id="post-share-links">
             &nbsp;Share on:
@@ -26,6 +27,7 @@
             /
             <a href="http://www.bloglovin.com/blog/14559547/?claim=cqravg9v4n2">Bloglovin</a>
         </p>
+       {% endif %}
      </div>
 {% endblock %}
 
