@@ -86,3 +86,7 @@ snippet from above.
 The code snippet above should be fairly self explanatory. The idea here is to 
 *asynchronously* process chunk of data by pushing it into a multiprocessing pool queue. 
 Each process in pool will work on the task, and return the result.
+
+Note, it is important to create the ``Pool`` inside the ``__main__`` block. That is
+because, only one main process should create the pool and distribute asynchronously
+amongst different processes. 
