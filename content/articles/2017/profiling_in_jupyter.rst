@@ -30,6 +30,7 @@ code or a block of code. Let us take a look at a really simple example with thes
     return y1, y2
     
     
+    
 **timeit**
 
 Now to see which one of these is faster, you can use the ``%timeit`` magic command:
@@ -56,6 +57,7 @@ block. Notice the double percentage sign:
 ``3 loops, best of 3: 18.2 µs per loop``
 
 
+
 **time**
 
 On some occasions, you can get the time taken using the ``%time`` magic command for the line or ``%%time`` for the cell block.:
@@ -68,6 +70,7 @@ On some occasions, you can get the time taken using the ``%time`` magic command 
   
   
 ``Wall time: 10 ms``
+  
   
 
 **prun**
@@ -97,6 +100,7 @@ does function level code profiling. For example
         1    0.000    0.000    0.009    0.009 <ipython-input-23-5c434cf7f3ad>:12(hunc)
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects} 
         
+
 
 **lprun**
 
