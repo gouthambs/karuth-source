@@ -1,7 +1,7 @@
 Profiling Python Code in Jupyter Notebooks
 ##########################################
 
-:author: Gouthama Balaraman
+:author: Goutham Balaraman
 :date: 2017-03-02
 :slug: profiling-python-jupyter-notebooks
 :tags: Python, Jupyter, Programming
