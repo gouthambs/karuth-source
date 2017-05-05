@@ -6,6 +6,8 @@ Multi-Processing With Pandas
 :description: Motivation for using multi-processing with pandas
 :slug: distributed-processing-pandas
 
+**NOTE**: There are better ways to do this now (2017). Please refer to an updated post using `dask <http://gouthamanbalaraman.com/blog/distributed-processing-pandas-dask.html>`_.
+
 If you have used ``pandas``, you must be familiar with the awesome functionality and tools that 
 it brings to data processing. I have used ``pandas`` as a tool to read data files and transform
 them into various summaries of interest. My usual process pipeline would start with 
