@@ -11,9 +11,27 @@ script:
 notifications:
   email:
     on_failure: always
-env:
-  global:
-    secure: MVPPwbr1huDw6pQ/MoXZlieQul6DfF5zOhI+i/HmeUbRSigibHRRNvLkBr3Pejc2FOwDUe9RDlqfRxoWYUsp1dTzxqZwHdf6TrVnEJ6R4GqwCbAEG+CzV8AnYI2qiRJVxvW1JrzmvPJPENQzzvXjlZDOVguHTebgAv1kHdvYDgo=
 before_install:
 - git submodule update --init --recursive
-after_success: chmod +x deploy.sh && ./deploy.sh
+after_success: |
+  BRANCH=master
+  TARGET_REPO=gouthambs/gouthambs.github.io
+  PELICAN_OUTPUT_FOLDER=output
+
+  if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      echo -e "Starting to deploy to Github Pages\n"
+      if [ "$TRAVIS" == "true" ]; then
+          git config --global user.email "travis@travis-ci.org"
+          git config --global user.name "Travis"
+      fi
+      #using token clone gh-pages branch
+      git clone --quiet --branch=$BRANCH https://${GITHUB_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
+      #go into directory and copy data we're interested in to that directory
+      cd built_website
+      rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
+      #add, commit and push files
+      git add -f .
+      git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
+      git push -fq origin $BRANCH > /dev/null
+      echo -e "Deploy completed\n"
+  fi
