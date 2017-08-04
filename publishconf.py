@@ -38,7 +38,7 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 # READERS = {'html': None}
-DISQUS_SITENAME = "gouthamanbalaramancom"
+# DISQUS_SITENAME = "gouthamanbalaramancom"
 GOOGLE_ANALYTICS = 'UA-46714334-1'
 THEME = "simple-bootstrap"
 DISPLAY_PAGES_ON_MENU = True
