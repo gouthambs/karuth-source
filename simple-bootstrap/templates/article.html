@@ -35,44 +35,30 @@
 
 <div class="bs-docs-section">
     
-     <!-- article description -->
-      {% if article.description %}
-         <p class="lead">{{article.description}}</p>
-      {% endif %}
-      {% if article.share_post and article.status != 'draft' %}
-      {% endif %}
-      
-      
-      
-      <!-- article content -->
-     {{ article.content }}
-     <br><br>
+    <!-- article description -->
+    {% if article.description %}
+        <p class="lead">{{article.description}}</p>
+    {% endif %}
+    {% if article.share_post and article.status != 'draft' %}
+    {% endif %}
+    <br>
      {% if article.tags %}
 	      {% for tag in article.tags %}
 	            {% if "quantlib" == tag.name %}
-				
-				<div class="row">
-					<div class="col-md-3">
-						<a href="https://leanpub.com/quantlibpythoncookbook">
-							<img alt="QuantLib Python Cookbook" 
-								 src="https://s3.amazonaws.com/titlepages.leanpub.com/quantlibpythoncookbook/medium?1465967986"
-								 title= "QuantLib Python Cookbook">
-						</a>
-					</div>
-					<div class="col-md-9">
-						<em>Updated posts from this blog and transcripts of Luigi's screencasts on YouTube is compiled 
-						into <a href="https://leanpub.com/quantlibpythoncookbook"> QuantLib Python Cookbook </a>. 
-						Visit here for other <a href ="{{ SITEURL }}/blog/quantlib-python-tutorials-with-examples.html">QuantLib Python examples</a>.
-						You can also help improve this blog series by answering this 
-						<a href="https://docs.google.com/forms/d/1iRI-YWgqCB-rUhxVsFf-s_y00yAB0vyb-b816q6oktk/viewform">one minute survey.</a></em>
-					</div>
-				</div>
-	            <br><br>
+				<em>
+					Visit here for other <a href ="{{ SITEURL }}/blog/quantlib-python-tutorials-with-examples.html">QuantLib Python examples</a>.
+					If you found these posts useful, please take a minute by providing some  
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFdJ768HKmIyJmaVRHBUJNY5NyQl6vr0GZvSkx-bUfIloNZA/viewform">feedback.</a></em>
+				</em>
+	            <br>
 	            {% endif %}
 	        {% endfor %}
       {% endif %}
 	  <br>
-	 
+	 <!-- article content -->
+     {{ article.content }}
+     <br><br>
+
      <!-- article tags-->
      {% if article.tags %}
         <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;
@@ -115,5 +101,24 @@
      <!-- Comment END -->
     {% endif %}
 </div>    
+{% endblock %}
+{% block rightpanel%}
+<img  src="/images/me.png" width="75" height="75" class="center-block">
+<br>
+<small>
+I am Goutham Balaraman, and I explore topics in quantitative finance, programming, and data science.
+You can follow me <a href="https://twitter.com/gsbalaraman">@gsbalaraman</a>.
+</small>
+<br>
+<hr>
+<center><b> Checkout my book</b></center>
+ <a href="https://leanpub.com/quantlibpythoncookbook" >
+    <img style="-webkit-user-select: none" src="/images/cookbook.png" width="125" class="center-block">
+ </a>
+ <br>
+ <small>
+ 	Updated posts from this blog and transcripts of Luigi's screencasts on YouTube is compiled 
+	into <a href="https://leanpub.com/quantlibpythoncookbook"> QuantLib Python Cookbook </a>. 
+ </small>
 {% endblock %}
 
