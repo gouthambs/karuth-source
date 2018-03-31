@@ -29,7 +29,6 @@ conflicts. In order to keep my Docker images minimal, I use Alpine Linux as a ba
 
  
 
-
 ### Getting Up and Running
 
 In order to get started on using Docker, you need to first install Docker. The first step
@@ -45,9 +44,20 @@ This is going to pull the quantlib-notebook image from Docker Hub. This process 
 seconds. Think of this as the same as downloading an installer for a software.
 
 
-Once you have the image downloaded, you can run quantlib-python notebooks by donig the following:
+Once you have the image downloaded, you can run quantlib-python notebooks by doing the following:
+	
+	
+	docker run -d -p 8888:8888 --mount src=<your notebook folder>,target=/home/notebooks,type=bind --name ql_notebook gbalaraman/quantlib-notebook
 
+If you are using latest docker images published by Luigi, you should mount to `/notebooks`
+folder on the container. So in all it would look like:
+
+	docker run -d -p 8888:8888 --mount src=<your notebook folder>,target=/notebooks,type=bind --name ql_notebook2 lballabio/quantlib-notebook
+
+	
+Those using older docker versions, you had to do this:
 	docker run -d -p 8888:8888 -v <your notebook folder>:/home/notebooks/ --name ql_notebook gbalaraman/quantlib-notebook 
+	
 
 The above command runs the image "gbalaraman/quantlib-notebook" as a daemon (-d) and
 will forward the port 8888 in the container to the port 8888 in localhost (-p 8888:8888).
