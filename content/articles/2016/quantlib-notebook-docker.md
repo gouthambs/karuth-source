@@ -56,6 +56,7 @@ folder on the container. So in all it would look like:
 
 	
 Those using older docker versions, you had to do this:
+
 	docker run -d -p 8888:8888 -v <your notebook folder>:/home/notebooks/ --name ql_notebook gbalaraman/quantlib-notebook 
 	
 
